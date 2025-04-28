@@ -1,0 +1,219 @@
+{
+  "numbers": {
+    "1": {
+      "planet": "Sun",
+      "element": "Fire",
+      "qualities": ["Leadership", "Independence", "Originality"],
+      "colors": ["Gold", "Orange", "Yellow"],
+      "gemstone": "Ruby",
+      "direction": "East",
+      "day": "Sunday",
+      "gender": "Masculine",
+      "careers": [
+        "Entrepreneur",
+        "CEO",
+        "Manager",
+        "Political Leader",
+        "Inventor",
+        "Business Owner",
+        "Creative Director",
+        "Motivational Speaker"
+      ],
+      "description": "Number 1 represents the Sun and symbolizes leadership, individuality, and new beginnings. People with this number tend to be ambitious, creative, and independent."
+    },
+    "2": {
+      "planet": "Moon",
+      "element": "Water",
+      "qualities": ["Cooperation", "Diplomacy", "Sensitivity"],
+      "colors": ["White", "Silver"],
+      "gemstone": "Pearl",
+      "direction": "Northwest",
+      "day": "Monday",
+      "gender": "Feminine",
+      "careers": [
+        "Diplomat",
+        "Counselor",
+        "Teacher",
+        "Psychologist",
+        "Nurse",
+        "Interior Designer",
+        "Mediator",
+        "Social Worker"
+      ],
+      "description": "Number 2 represents the Moon and symbolizes partnerships, intuition, and emotions. People with this number are often diplomatic, sensitive, and good mediators."
+    },
+    "3": {
+      "planet": "Jupiter",
+      "element": "Fire",
+      "qualities": ["Expression", "Optimism", "Growth"],
+      "colors": ["Yellow", "Purple"],
+      "gemstone": "Yellow Sapphire",
+      "direction": "Northeast",
+      "day": "Thursday",
+      "gender": "Masculine",
+      "careers": [
+        "Writer",
+        "Public Speaker",
+        "Actor",
+        "Journalist",
+        "Teacher",
+        "Life Coach",
+        "Marketing Executive",
+        "Entertainment Industry Professional"
+      ],
+      "description": "Number 3 represents Jupiter and symbolizes expansion, growth, and wisdom. People with this number are often optimistic, expressive, and naturally lucky."
+    },
+    "4": {
+      "planet": "Rahu",
+      "element": "Air",
+      "qualities": ["Stability", "Foundation", "Order"],
+      "colors": ["Green", "Blue"],
+      "gemstone": "Blue Sapphire",
+      "direction": "South",
+      "day": "Saturday",
+      "gender": "Masculine",
+      "careers": [
+        "Accountant",
+        "Engineer",
+        "Architect",
+        "Project Manager",
+        "Financial Analyst",
+        "Real Estate Agent",
+        "Construction Manager",
+        "Systems Analyst"
+      ],
+      "description": "Number 4 represents Rahu and symbolizes stability, practicality, and material achievements. People with this number are often methodical, reliable, and hardworking."
+    },
+    "5": {
+      "planet": "Mercury",
+      "element": "Earth",
+      "qualities": ["Change", "Adventure", "Freedom"],
+      "colors": ["Green", "Gray"],
+      "gemstone": "Emerald",
+      "direction": "North",
+      "day": "Wednesday",
+      "gender": "Neutral",
+      "careers": [
+        "Travel Agent",
+        "Sales Representative",
+        "Journalist",
+        "Digital Marketer",
+        "Public Relations",
+        "Tour Guide",
+        "Event Planner",
+        "Communications Specialist"
+      ],
+      "description": "Number 5 represents Mercury and symbolizes change, communication, and versatility. People with this number are often adaptable, quick-witted, and freedom-loving."
+    },
+    "6": {
+      "planet": "Venus",
+      "element": "Air",
+      "qualities": ["Harmony", "Love", "Responsibility"],
+      "colors": ["White", "Pink"],
+      "gemstone": "Diamond",
+      "direction": "Southeast",
+      "day": "Friday",
+      "gender": "Feminine",
+      "careers": [
+        "Doctor",
+        "Teacher",
+        "Artist",
+        "Counselor",
+        "Interior Designer",
+        "Chef",
+        "Beauty Therapist",
+        "Child Care Professional"
+      ],
+      "description": "Number 6 represents Venus and symbolizes love, harmony, and responsibility. People with this number are often nurturing, artistic, and natural caregivers."
+    },
+    "7": {
+      "planet": "Ketu",
+      "element": "Water",
+      "qualities": ["Spirituality", "Analysis", "Introspection"],
+      "colors": ["Gray", "Purple"],
+      "gemstone": "Cat's Eye",
+      "direction": "Southwest",
+      "day": "Monday",
+      "gender": "Feminine",
+      "careers": [
+        "Researcher",
+        "Scientist",
+        "Philosopher",
+        "Spiritual Teacher",
+        "Psychic Reader",
+        "Data Analyst",
+        "University Professor",
+        "Technical Writer"
+      ],
+      "description": "Number 7 represents Ketu and symbolizes spirituality, wisdom, and mysticism. People with this number are often analytical, introspective, and spiritually inclined."
+    },
+    "8": {
+      "planet": "Saturn",
+      "element": "Earth",
+      "qualities": ["Power", "Authority", "Material Success"],
+      "colors": ["Black", "Dark Blue"],
+      "gemstone": "Blue Sapphire",
+      "direction": "West",
+      "day": "Saturday",
+      "gender": "Masculine",
+      "careers": [
+        "Investment Banker",
+        "Corporate Executive",
+        "Financial Advisor",
+        "Real Estate Developer",
+        "Business Consultant",
+        "Stock Broker",
+        "Judge",
+        "Corporate Lawyer"
+      ],
+      "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded."
+    },
+    "9": {
+      "planet": "Mars",
+      "element": "Fire",
+      "qualities": ["Courage", "Leadership", "Completion"],
+      "colors": ["Red", "Scarlet"],
+      "gemstone": "Coral",
+      "direction": "South",
+      "day": "Tuesday",
+      "gender": "Masculine",
+      "careers": [
+        "Humanitarian",
+        "NGO Worker",
+        "Medical Professional",
+        "International Relations",
+        "Military Officer",
+        "Police Officer",
+        "Charitable Organization Leader",
+        "Emergency Services Professional"
+      ],
+      "description": "Number 9 represents Mars and symbolizes completion, courage, and transformation. People with this number are often energetic, brave, and natural leaders."
+    }
+  },
+  "gridPositions": {
+    "topRow": {
+      "meaning": "Mental Plane - Thoughts and intellectual capabilities",
+      "positions": {
+        "3": "Communication and self-expression",
+        "1": "Individual identity and ego",
+        "9": "Higher consciousness and wisdom"
+      }
+    },
+    "middleRow": {
+      "meaning": "Emotional Plane - Feelings and relationships",
+      "positions": {
+        "6": "Love and harmony",
+        "7": "Spiritual connection",
+        "5": "Change and adaptation"
+      }
+    },
+    "bottomRow": {
+      "meaning": "Physical Plane - Material aspects and practical matters",
+      "positions": {
+        "2": "Partnerships and cooperation",
+        "8": "Material success",
+        "4": "Foundation and stability"
+      }
+    }
+  }
+}
