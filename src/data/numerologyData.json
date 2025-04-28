@@ -19,7 +19,23 @@
         "Creative Director",
         "Motivational Speaker"
       ],
-      "description": "Number 1 represents the Sun and symbolizes leadership, individuality, and new beginnings. People with this number tend to be ambitious, creative, and independent."
+      "description": "Number 1 represents the Sun and symbolizes leadership, individuality, and new beginnings. People with this number tend to be ambitious, creative, and independent.",
+      "remedies": {
+        "gemstones": ["Ruby", "Red Coral"],
+        "fastingDay": "Sunday",
+        "activities": [
+          "Donate red items on Sunday",
+          "Practice Surya Namaskar (Sun Salutation)",
+          "Feed birds in the morning",
+          "Wear copper ring in ring finger"
+        ],
+        "mantras": [
+          "Om Suryaya Namaha",
+          "Om Hram Hreem Hraum Sah Suryaya Namaha"
+        ],
+        "colors": ["Red", "Orange", "Pink"],
+        "direction": "Face east while working or sleeping"
+      }
     },
     "2": {
       "planet": "Moon",
@@ -40,7 +56,23 @@
         "Mediator",
         "Social Worker"
       ],
-      "description": "Number 2 represents the Moon and symbolizes partnerships, intuition, and emotions. People with this number are often diplomatic, sensitive, and good mediators."
+      "description": "Number 2 represents the Moon and symbolizes partnerships, intuition, and emotions. People with this number are often diplomatic, sensitive, and good mediators.",
+      "remedies": {
+        "gemstones": ["Pearl", "Moonstone"],
+        "fastingDay": "Monday",
+        "activities": [
+          "Offer white flowers to Moon",
+          "Feed dogs and cows",
+          "Drink water from silver vessel",
+          "Practice meditation during moonlight"
+        ],
+        "mantras": [
+          "Om Chandraya Namaha",
+          "Om Shraam Shreem Shraum Sah Chandraya Namaha"
+        ],
+        "colors": ["White", "Silver"],
+        "direction": "Face northwest during prayers"
+      }
     },
     "3": {
       "planet": "Jupiter",
@@ -61,7 +93,23 @@
         "Marketing Executive",
         "Entertainment Industry Professional"
       ],
-      "description": "Number 3 represents Jupiter and symbolizes expansion, growth, and wisdom. People with this number are often optimistic, expressive, and naturally lucky."
+      "description": "Number 3 represents Jupiter and symbolizes expansion, growth, and wisdom. People with this number are often optimistic, expressive, and naturally lucky.",
+      "remedies": {
+        "gemstones": ["Yellow Sapphire", "Topaz"],
+        "fastingDay": "Thursday",
+        "activities": [
+          "Feed Brahmins or teachers",
+          "Donate yellow items",
+          "Plant a peepal tree",
+          "Wear gold in ring finger"
+        ],
+        "mantras": [
+          "Om Gurave Namaha",
+          "Om Graam Greem Graum Sah Gurave Namaha"
+        ],
+        "colors": ["Yellow", "Gold"],
+        "direction": "Face north or northeast during worship"
+      }
     },
     "4": {
       "planet": "Rahu",
@@ -82,7 +130,20 @@
         "Construction Manager",
         "Systems Analyst"
       ],
-      "description": "Number 4 represents Rahu and symbolizes stability, practicality, and material achievements. People with this number are often methodical, reliable, and hardworking."
+      "description": "Number 4 represents Rahu and symbolizes stability, practicality, and material achievements. People with this number are often methodical, reliable, and hardworking.",
+      "remedies": {
+        "gemstones": ["Blue Sapphire", "Amethyst"],
+        "fastingDay": "Saturday",
+        "activities": [
+          "Feed crows on Saturday",
+          "Donate blue or black items",
+          "Practice pranayama",
+          "Worship Lord Hanuman"
+        ],
+        "mantras": ["Om Rahave Namaha", "Om Ram Reem Raum Sah Rahave Namaha"],
+        "colors": ["Blue", "Indigo"],
+        "direction": "Face south during meditation"
+      }
     },
     "5": {
       "planet": "Mercury",
@@ -103,7 +164,23 @@
         "Event Planner",
         "Communications Specialist"
       ],
-      "description": "Number 5 represents Mercury and symbolizes change, communication, and versatility. People with this number are often adaptable, quick-witted, and freedom-loving."
+      "description": "Number 5 represents Mercury and symbolizes change, communication, and versatility. People with this number are often adaptable, quick-witted, and freedom-loving.",
+      "remedies": {
+        "gemstones": ["Emerald", "Green Tourmaline"],
+        "fastingDay": "Wednesday",
+        "activities": [
+          "Plant green trees",
+          "Practice communication skills",
+          "Write daily journal",
+          "Donate books or educational materials"
+        ],
+        "mantras": [
+          "Om Budhaya Namaha",
+          "Om Bram Breem Braum Sah Budhaya Namaha"
+        ],
+        "colors": ["Green", "Light Yellow"],
+        "direction": "Face north during study or work"
+      }
     },
     "6": {
       "planet": "Venus",
@@ -124,7 +201,23 @@
         "Beauty Therapist",
         "Child Care Professional"
       ],
-      "description": "Number 6 represents Venus and symbolizes love, harmony, and responsibility. People with this number are often nurturing, artistic, and natural caregivers."
+      "description": "Number 6 represents Venus and symbolizes love, harmony, and responsibility. People with this number are often nurturing, artistic, and natural caregivers.",
+      "remedies": {
+        "gemstones": ["Diamond", "White Sapphire"],
+        "fastingDay": "Friday",
+        "activities": [
+          "Feed female animals",
+          "Wear silver in middle finger",
+          "Practice arts or music",
+          "Donate white grains or sugar"
+        ],
+        "mantras": [
+          "Om Shukraya Namaha",
+          "Om Sham Sheem Shaum Sah Shukraya Namaha"
+        ],
+        "colors": ["White", "Silver"],
+        "direction": "Face southeast during creative work"
+      }
     },
     "7": {
       "planet": "Ketu",
@@ -145,7 +238,23 @@
         "University Professor",
         "Technical Writer"
       ],
-      "description": "Number 7 represents Ketu and symbolizes spirituality, wisdom, and mysticism. People with this number are often analytical, introspective, and spiritually inclined."
+      "description": "Number 7 represents Ketu and symbolizes spirituality, wisdom, and mysticism. People with this number are often analytical, introspective, and spiritually inclined.",
+      "remedies": {
+        "gemstones": ["Cat's Eye", "Brown Tourmaline"],
+        "fastingDay": "Monday",
+        "activities": [
+          "Practice silence",
+          "Meditate regularly",
+          "Study spiritual texts",
+          "Feed snakes (milk)"
+        ],
+        "mantras": [
+          "Om Ketave Namaha",
+          "Om Kram Kreem Kraum Sah Ketave Namaha"
+        ],
+        "colors": ["Brown", "Purple"],
+        "direction": "Face southwest during spiritual practices"
+      }
     },
     "8": {
       "planet": "Saturn",
@@ -166,7 +275,23 @@
         "Judge",
         "Corporate Lawyer"
       ],
-      "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded."
+      "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded.",
+      "remedies": {
+        "gemstones": ["Blue Sapphire", "Black Pearl"],
+        "fastingDay": "Saturday",
+        "activities": [
+          "Feed poor people",
+          "Donate oil or black items",
+          "Wear iron ring in middle finger",
+          "Practice discipline and routine"
+        ],
+        "mantras": [
+          "Om Shaneshwaraya Namaha",
+          "Om Sham Sheem Shaum Sah Shaneshwaraya Namaha"
+        ],
+        "colors": ["Dark Blue", "Black"],
+        "direction": "Face west during business activities"
+      }
     },
     "9": {
       "planet": "Mars",
@@ -187,7 +312,23 @@
         "Charitable Organization Leader",
         "Emergency Services Professional"
       ],
-      "description": "Number 9 represents Mars and symbolizes completion, courage, and transformation. People with this number are often energetic, brave, and natural leaders."
+      "description": "Number 9 represents Mars and symbolizes completion, courage, and transformation. People with this number are often energetic, brave, and natural leaders.",
+      "remedies": {
+        "gemstones": ["Red Coral", "Carnelian"],
+        "fastingDay": "Tuesday",
+        "activities": [
+          "Practice martial arts or exercise",
+          "Donate red lentils or copper items",
+          "Wear coral in ring finger",
+          "Help those in need"
+        ],
+        "mantras": [
+          "Om Kujaya Namaha",
+          "Om Kram Kreem Kraum Sah Bhaumaya Namaha"
+        ],
+        "colors": ["Red", "Crimson"],
+        "direction": "Face south during physical activities"
+      }
     }
   },
   "gridPositions": {
