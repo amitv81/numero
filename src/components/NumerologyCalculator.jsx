@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import VedicGrid from "./VedicGrid";
 import numerologyData from "../data/numerologyData.json";
+import positiveNumbersData from "../data/positiveNumbers.json";
 
 const NumerologyCalculator = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -10,6 +11,7 @@ const NumerologyCalculator = () => {
   const [vedicGrid, setVedicGrid] = useState(Array(9).fill([]));
   const [dateInput, setDateInput] = useState("");
   const [name, setName] = useState("");
+  const [singleDigitNameNumber, setSingleDigitNameNumber] = useState(null);
 
   // Updated Vedic grid order: 3-1-9, 6-7-5, 2-8-4
   const vedicOrder = [3, 1, 9, 6, 7, 5, 2, 8, 4];
@@ -20,6 +22,7 @@ const NumerologyCalculator = () => {
     i: 1,
     j: 1,
     y: 1,
+    q: 1,
     b: 2,
     k: 2,
     r: 2,
@@ -43,27 +46,40 @@ const NumerologyCalculator = () => {
     f: 8,
   };
 
-  // Calculate name number
-  const calculateNameNumber = (name) => {
-    if (!name) return null;
+  // Calculate name number for a specific part of the name
+  const calculateNameNumberForPart = (namePart) => {
+    if (!namePart) return null;
 
-    const nameSum = name
+    const nameSum = namePart
       .toLowerCase()
       .split("")
-      .filter((char) => /[a-z]/.test(char)) // Only process alphabets
+      .filter((char) => /[a-z]/.test(char))
       .reduce((sum, char) => {
         return sum + (nameNumberMap[char] || 0);
       }, 0);
 
-    // Reduce to single digit
+    // Only reduce if number is more than 2 digits
     let nameNumber = nameSum;
-    while (nameNumber > 9) {
+    while (nameNumber > 80) {
       nameNumber = String(nameNumber)
         .split("")
         .reduce((sum, digit) => sum + parseInt(digit), 0);
     }
 
     return nameNumber;
+  };
+
+  // Calculate name number for full name and first name
+  const calculateNameNumbers = (fullName) => {
+    if (!fullName) return { fullNameNumber: null, firstNameNumber: null };
+
+    const nameParts = fullName.trim().split(/\s+/);
+    const firstName = nameParts[0];
+
+    const firstNameNumber = calculateNameNumberForPart(firstName);
+    const fullNameNumber = calculateNameNumberForPart(fullName);
+
+    return { fullNameNumber, firstNameNumber };
   };
 
   const handleDateInputChange = (event) => {
@@ -103,11 +119,21 @@ const NumerologyCalculator = () => {
   const handleNameChange = (event) => {
     const newName = event.target.value;
     setName(newName);
-    const nameNumber = calculateNameNumber(newName);
+    const { fullNameNumber, firstNameNumber } = calculateNameNumbers(newName);
     setNumerologyResult((prev) => ({
       ...prev,
-      nameNumber: nameNumber || null,
+      nameNumber: fullNameNumber,
+      firstNameNumber: firstNameNumber,
     }));
+
+    // Calculate single digit name number
+    let singleDigit = fullNameNumber;
+    while (singleDigit > 9) {
+      singleDigit = String(singleDigit)
+        .split("")
+        .reduce((sum, digit) => sum + parseInt(digit), 0);
+    }
+    setSingleDigitNameNumber(singleDigit);
   };
 
   const calculateVedicGrid = (date) => {
@@ -181,14 +207,28 @@ const NumerologyCalculator = () => {
       ...prev,
       destinyNumber,
       birthNumber,
-      nameNumber: calculateNameNumber(name),
+      nameNumber: calculateNameNumberForPart(name),
     }));
   };
 
-  const isEnemyNumber = (number1, number2) => {
-    if (!number1 || !number2) return false;
-    const numberData = numerologyData.numbers[number2];
-    return numberData?.enemyNumbers.includes(number1);
+  const isEnemyNumber = (nameNumber, birthNumber, destinyNumber) => {
+    if (!nameNumber || !birthNumber || !destinyNumber) return false;
+
+    // Get enemy numbers for birth number and destiny number
+    const birthEnemyNumbers =
+      numerologyData.numbers[birthNumber]?.enemyNumbers || [];
+    const destinyEnemyNumbers =
+      numerologyData.numbers[destinyNumber]?.enemyNumbers || [];
+
+    // Check if name number is in either enemy number list
+    return (
+      birthEnemyNumbers.includes(nameNumber) ||
+      destinyEnemyNumbers.includes(nameNumber)
+    );
+  };
+
+  const isPositiveNumber = (number) => {
+    return positiveNumbersData.positiveNumbers.includes(number);
   };
 
   return (
@@ -264,23 +304,78 @@ const NumerologyCalculator = () => {
                   </p>
                 </div>
 
-                <div className={`flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 ${
-                  isEnemyNumber(numerologyResult.nameNumber, numerologyResult.birthNumber)
-                    ? 'border-red-500'
-                    : 'border-purple-200'
-                }`}>
-                  <p className={`text-lg mb-2 ${
-                    isEnemyNumber(numerologyResult.nameNumber, numerologyResult.birthNumber)
-                      ? 'text-red-600'
-                      : 'text-purple-600'
-                  }`}>Name Number</p>
-                  <p className={`text-4xl font-bold ${
-                    isEnemyNumber(numerologyResult.nameNumber, numerologyResult.birthNumber)
-                      ? 'text-red-600'
-                      : 'text-purple-900'
-                  }`}>
-                    {numerologyResult.nameNumber || '-'}
-                  </p>
+                <div
+                  className={`flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 ${
+                    isEnemyNumber(
+                      singleDigitNameNumber,
+                      numerologyResult.birthNumber,
+                      numerologyResult.destinyNumber
+                    )
+                      ? "border-red-500"
+                      : numerologyResult.firstNameNumber &&
+                        numerologyResult.nameNumber &&
+                        isPositiveNumber(numerologyResult.firstNameNumber) &&
+                        isPositiveNumber(numerologyResult.nameNumber)
+                      ? "border-green-500 bg-green-100"
+                      : "border-purple-200"
+                  }`}
+                >
+                  <p className="text-lg text-purple-600 mb-2">Name Number</p>
+                  <div className="text-center">
+                    <p
+                      className={`text-4xl font-bold ${
+                        numerologyResult.nameNumber
+                          ? isPositiveNumber(numerologyResult.nameNumber)
+                            ? "text-green-600"
+                            : "text-red-600"
+                          : "text-purple-900"
+                      }`}
+                    >
+                      {numerologyResult.nameNumber || "-"}
+                    </p>
+                    <div className="space-y-1 mt-1">
+                      <p
+                        className={`text-sm ${
+                          numerologyResult.firstNameNumber
+                            ? isPositiveNumber(numerologyResult.firstNameNumber)
+                              ? "text-green-600"
+                              : "text-red-600"
+                            : "text-purple-600"
+                        }`}
+                      >
+                        First Name: {numerologyResult.firstNameNumber || "-"}
+                      </p>
+                      <p
+                        className={`text-sm ${
+                          numerologyResult.nameNumber
+                            ? isPositiveNumber(numerologyResult.nameNumber)
+                              ? "text-green-600"
+                              : "text-red-600"
+                            : "text-purple-600"
+                        }`}
+                      >
+                        Full Name: {numerologyResult.nameNumber || "-"}
+                      </p>
+                      <p
+                        className={`text-sm hidden ${
+                          isEnemyNumber(
+                            singleDigitNameNumber,
+                            numerologyResult.birthNumber,
+                            numerologyResult.destinyNumber
+                          )
+                            ? "text-red-600 font-semibold"
+                            : "text-purple-600"
+                        }`}
+                      >
+                        Single Digit: {singleDigitNameNumber || "-"}
+                        {isEnemyNumber(
+                          singleDigitNameNumber,
+                          numerologyResult.birthNumber,
+                          numerologyResult.destinyNumber
+                        ) && " (Enemy Number)"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
