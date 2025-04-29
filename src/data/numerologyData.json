@@ -20,6 +20,8 @@
         "Motivational Speaker"
       ],
       "description": "Number 1 represents the Sun and symbolizes leadership, individuality, and new beginnings. People with this number tend to be ambitious, creative, and independent.",
+      "luckyNumbers": [1, 3, 5, 9],
+      "enemyNumbers": [4, 6, 8],
       "remedies": {
         "gemstones": ["Ruby", "Red Coral"],
         "fastingDay": "Sunday",
@@ -57,6 +59,8 @@
         "Social Worker"
       ],
       "description": "Number 2 represents the Moon and symbolizes partnerships, intuition, and emotions. People with this number are often diplomatic, sensitive, and good mediators.",
+      "luckyNumbers": [2, 3, 7, 9],
+      "enemyNumbers": [4, 5, 8],
       "remedies": {
         "gemstones": ["Pearl", "Moonstone"],
         "fastingDay": "Monday",
@@ -94,6 +98,8 @@
         "Entertainment Industry Professional"
       ],
       "description": "Number 3 represents Jupiter and symbolizes expansion, growth, and wisdom. People with this number are often optimistic, expressive, and naturally lucky.",
+      "luckyNumbers": [1, 3, 6, 9],
+      "enemyNumbers": [4, 7, 8],
       "remedies": {
         "gemstones": ["Yellow Sapphire", "Topaz"],
         "fastingDay": "Thursday",
@@ -131,6 +137,8 @@
         "Systems Analyst"
       ],
       "description": "Number 4 represents Rahu and symbolizes stability, practicality, and material achievements. People with this number are often methodical, reliable, and hardworking.",
+      "luckyNumbers": [4, 6, 8],
+      "enemyNumbers": [1, 2, 5],
       "remedies": {
         "gemstones": ["Blue Sapphire", "Amethyst"],
         "fastingDay": "Saturday",
@@ -165,6 +173,8 @@
         "Communications Specialist"
       ],
       "description": "Number 5 represents Mercury and symbolizes change, communication, and versatility. People with this number are often adaptable, quick-witted, and freedom-loving.",
+      "luckyNumbers": [1, 5, 7],
+      "enemyNumbers": [2, 4, 9],
       "remedies": {
         "gemstones": ["Emerald", "Green Tourmaline"],
         "fastingDay": "Wednesday",
@@ -202,6 +212,8 @@
         "Child Care Professional"
       ],
       "description": "Number 6 represents Venus and symbolizes love, harmony, and responsibility. People with this number are often nurturing, artistic, and natural caregivers.",
+      "luckyNumbers": [3, 6, 8, 9],
+      "enemyNumbers": [1, 4, 7],
       "remedies": {
         "gemstones": ["Diamond", "White Sapphire"],
         "fastingDay": "Friday",
@@ -239,6 +251,8 @@
         "Technical Writer"
       ],
       "description": "Number 7 represents Ketu and symbolizes spirituality, wisdom, and mysticism. People with this number are often analytical, introspective, and spiritually inclined.",
+      "luckyNumbers": [2, 5, 7],
+      "enemyNumbers": [1, 3, 6],
       "remedies": {
         "gemstones": ["Cat's Eye", "Brown Tourmaline"],
         "fastingDay": "Monday",
@@ -276,6 +290,8 @@
         "Corporate Lawyer"
       ],
       "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded.",
+      "luckyNumbers": [4, 6, 8],
+      "enemyNumbers": [1, 3, 5],
       "remedies": {
         "gemstones": ["Blue Sapphire", "Black Pearl"],
         "fastingDay": "Saturday",
@@ -313,6 +329,8 @@
         "Emergency Services Professional"
       ],
       "description": "Number 9 represents Mars and symbolizes completion, courage, and transformation. People with this number are often energetic, brave, and natural leaders.",
+      "luckyNumbers": [1, 3, 5, 9],
+      "enemyNumbers": [2, 4, 7],
       "remedies": {
         "gemstones": ["Red Coral", "Carnelian"],
         "fastingDay": "Tuesday",

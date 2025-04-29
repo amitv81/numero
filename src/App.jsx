@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <Header />
-      <main className="flex-grow w-full">
+      <main className="flex-grow w-full max-w-[1600px] mx-auto">
         <NumerologyCalculator />
       </main>
       <Footer />

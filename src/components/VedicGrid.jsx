@@ -2,7 +2,7 @@ import { useState } from "react";
 import Modal from "./Modal";
 import numerologyData from "../data/numerologyData.json";
 
-const VedicGrid = ({ selectedDate, vedicGrid, vedicOrder }) => {
+const VedicGrid = ({ vedicGrid, vedicOrder }) => {
   const [modalData, setModalData] = useState(null);
 
   // Get occurrences of a number in the grid
@@ -25,6 +25,17 @@ const VedicGrid = ({ selectedDate, vedicGrid, vedicOrder }) => {
       <div>
         <h4 className="font-semibold text-purple-700 mb-2">Description</h4>
         <p className="text-gray-700">{data.description}</p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <h4 className="font-semibold text-purple-700 mb-2">Lucky Numbers</h4>
+          <p className="text-gray-700">{data.luckyNumbers.join(", ")}</p>
+        </div>
+        <div>
+          <h4 className="font-semibold text-purple-700 mb-2">Enemy Numbers</h4>
+          <p className="text-gray-700">{data.enemyNumbers.join(", ")}</p>
+        </div>
       </div>
 
       <div>
@@ -71,32 +82,70 @@ const VedicGrid = ({ selectedDate, vedicGrid, vedicOrder }) => {
   );
 
   return (
-    <div className="lg:col-span-8">
-      {selectedDate && (
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-xl font-semibold mb-4 text-center text-purple-800">
-            Vedic Numerology Grid
-          </h2>
-          <div className="aspect-square max-w-3xl mx-auto">
-            <div className="grid grid-cols-3 gap-1 h-full border-2 border-purple-300 p-1">
-              {vedicGrid.map((numbers, index) => (
-                <div
-                  key={index}
-                  className="bg-purple-50 border border-purple-200 rounded p-4 flex flex-col items-center justify-center relative cursor-pointer hover:bg-purple-100 transition-colors"
-                  onClick={() => handleNumberClick(vedicOrder[index])}
-                >
-                  <span className="absolute top-1 left-1 text-xs text-purple-400">
-                    {vedicOrder[index]}
-                  </span>
-                  <span className="text-xl font-semibold text-purple-800">
-                    {getNumberOccurrences(numbers)}
-                  </span>
+    <div className="w-full">
+      <div className="bg-white rounded-lg shadow-lg p-5">
+        <h2 className="text-2xl font-semibold mb-8 text-center text-purple-800">
+          Your Vedic Numerology Grid
+        </h2>
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="w-full lg:w-7/12">
+            <div>
+              <div className="border-2 border-purple-300 p-2 rounded-lg bg-purple-50/30">
+                <div className="flex flex-wrap h-full">
+                  {vedicGrid.map((numbers, index) => (
+                    <div key={index} className="w-1/3 p-2">
+                      <div
+                        className="h-full bg-white border-2 border-purple-200 rounded-lg p-6 flex flex-col items-center justify-center relative cursor-pointer hover:bg-purple-50 transition-colors shadow-sm hover:shadow-md"
+                        onClick={() => handleNumberClick(vedicOrder[index])}
+                      >
+                        <span className="absolute top-3 left-3 text-base font-medium text-purple-600">
+                          {vedicOrder[index]}
+                        </span>
+                        <span className="text-lg lg:text-3xl font-bold text-purple-800">
+                          {getNumberOccurrences(numbers)}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+          </div>
+          <div className="w-full lg:w-5/12">
+            <div className="w-full space-y-6 bg-purple-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-purple-800">
+                Grid Planes
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-purple-700">
+                    Mental Plane (Top Row)
+                  </h4>
+                  <p className="text-gray-600">
+                    {numerologyData.gridPositions.topRow.meaning}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-purple-700">
+                    Emotional Plane (Middle Row)
+                  </h4>
+                  <p className="text-gray-600">
+                    {numerologyData.gridPositions.middleRow.meaning}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-purple-700">
+                    Physical Plane (Bottom Row)
+                  </h4>
+                  <p className="text-gray-600">
+                    {numerologyData.gridPositions.bottomRow.meaning}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
 
       <Modal
         isOpen={modalData !== null}

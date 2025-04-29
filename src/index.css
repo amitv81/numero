@@ -6,7 +6,6 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -28,7 +27,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -84,6 +83,40 @@ button:focus-visible {
 
 .react-datepicker__year-dropdown-container {
   margin-top: 4px;
+}
+
+/* DatePicker Custom Styles */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker-popper {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.react-datepicker {
+  border: 1px solid #e9d5ff !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1) !important;
+  font-family: inherit !important;
+}
+
+.react-datepicker__header {
+  background-color: #faf5ff !important;
+  border-bottom: 1px solid #e9d5ff !important;
+}
+
+.react-datepicker__current-month {
+  color: #6b21a8 !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #9333ea !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #f3e8ff !important;
 }
 
 @media (prefers-color-scheme: light) {
