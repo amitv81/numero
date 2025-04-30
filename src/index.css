@@ -92,7 +92,7 @@ button:focus-visible {
 
 .react-datepicker-popper {
   left: 50% !important;
-  transform: translateX(-50%) !important;
+  transform: translateX(-50%) translate(0, 60px) !important;
 }
 
 .react-datepicker {

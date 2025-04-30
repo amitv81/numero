@@ -9,7 +9,6 @@ const NumerologyCalculator = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [numerologyResult, setNumerologyResult] = useState(null);
   const [vedicGrid, setVedicGrid] = useState(Array(9).fill([]));
-  const [dateInput, setDateInput] = useState("");
   const [name, setName] = useState("");
   const [singleDigitNameNumber, setSingleDigitNameNumber] = useState(null);
 
@@ -80,40 +79,6 @@ const NumerologyCalculator = () => {
     const fullNameNumber = calculateNameNumberForPart(fullName);
 
     return { fullNameNumber, firstNameNumber };
-  };
-
-  const handleDateInputChange = (event) => {
-    let value = event.target.value.replace(/\D/g, ""); // Remove non-digits
-
-    // Limit to 8 digits (DDMMYYYY)
-    value = value.slice(0, 8);
-
-    // Format as DD/MM/YYYY
-    let formattedDate = "";
-    if (value.length > 0) {
-      formattedDate = value.slice(0, 2);
-      if (value.length > 2) {
-        formattedDate += "/" + value.slice(2, 4);
-        if (value.length > 4) {
-          formattedDate += "/" + value.slice(4, 8);
-        }
-      }
-    }
-
-    setDateInput(formattedDate);
-
-    // Convert formatted date to Date object if it's complete
-    if (value.length === 8) {
-      const day = value.slice(0, 2);
-      const month = value.slice(2, 4);
-      const year = value.slice(4, 8);
-      const dateObj = new Date(`${year}-${month}-${day}`);
-
-      if (!isNaN(dateObj.getTime())) {
-        setSelectedDate(dateObj);
-        calculateVedicGrid(dateObj);
-      }
-    }
   };
 
   const handleNameChange = (event) => {
@@ -255,33 +220,24 @@ const NumerologyCalculator = () => {
               {/* Date Input */}
               <div className="flex-1">
                 <div className="relative">
-                  <input
-                    type="text"
-                    value={dateInput}
-                    onChange={handleDateInputChange}
-                    placeholder="DD/MM/YYYY"
-                    maxLength="10"
-                    className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
-                  />
                   <DatePicker
                     selected={selectedDate}
                     onChange={(date) => {
                       setSelectedDate(date);
                       calculateVedicGrid(date);
-                      if (date) {
-                        const day = date.getDate().toString().padStart(2, "0");
-                        const month = (date.getMonth() + 1)
-                          .toString()
-                          .padStart(2, "0");
-                        const year = date.getFullYear();
-                        setDateInput(`${day}/${month}/${year}`);
-                      }
                     }}
                     dateFormat="dd/MM/yyyy"
-                    customInput={<div style={{ display: "none" }} />}
-                    showYearDropdown
-                    scrollableYearDropdown
-                    yearDropdownItemNumber={100}
+                    placeholderText="Select date"
+                    className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
+                    onChangeRaw={(event) => {
+                      const value = event.target.value.replace(/\D/g, ""); // Remove non-digits
+                      if (value.length >= 8) {
+                        const day = value.substring(0, 2);
+                        const month = value.substring(2, 4);
+                        const year = value.substring(4, 8);
+                        event.target.value = `${day}/${month}/${year}`;
+                      }
+                    }}
                   />
                 </div>
               </div>
