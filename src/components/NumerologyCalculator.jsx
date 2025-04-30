@@ -2,12 +2,14 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import VedicGrid from "./VedicGrid";
+import DashaNumbers from "./DashaNumbers";
 import {
   calculateNameNumbers,
   calculateSingleDigit,
   calculateVedicGrid,
   isEnemyNumber,
   isPositiveNumber,
+  calculateDashaNumbers,
 } from "../utils/numerologyCalculations";
 
 const NumerologyCalculator = () => {
@@ -16,6 +18,8 @@ const NumerologyCalculator = () => {
   const [vedicGrid, setVedicGrid] = useState(Array(9).fill([]));
   const [name, setName] = useState("");
   const [singleDigitNameNumber, setSingleDigitNameNumber] = useState(null);
+  const [dashaNumbers, setDashaNumbers] = useState([]);
+  const [showDasha, setShowDasha] = useState(false);
 
   // Updated Vedic grid order: 3-1-9, 6-7-5, 2-8-4
   const vedicOrder = [3, 1, 9, 6, 7, 5, 2, 8, 4];
@@ -43,6 +47,15 @@ const NumerologyCalculator = () => {
       birthNumber: result.birthNumber,
       nameNumber: result.nameNumber,
     }));
+
+    // Calculate dasha numbers when date changes
+    if (date && result.birthNumber) {
+      const dashas = calculateDashaNumbers(
+        date.getFullYear(),
+        result.birthNumber
+      );
+      setDashaNumbers(dashas);
+    }
   };
 
   return (
@@ -185,10 +198,28 @@ const NumerologyCalculator = () => {
         </div>
       </div>
 
+      <div className="w-full flex justify-center mb-4">
+        <button
+          onClick={() => setShowDasha(!showDasha)}
+          className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+        >
+          {showDasha ? "Hide Dasha(s)" : "Show Dasha(s)"}
+        </button>
+      </div>
+
+      {showDasha && <DashaNumbers dashaNumbers={dashaNumbers} />}
+
       {/* Vedic Grid Section */}
       {selectedDate && (
         <div className="w-full">
-          <VedicGrid vedicGrid={vedicGrid} vedicOrder={vedicOrder} />
+          <VedicGrid
+            vedicGrid={vedicGrid}
+            vedicOrder={vedicOrder}
+            currentDasha={
+              dashaNumbers.find((d) => d.year === new Date().getFullYear())
+                ?.dashaNumber
+            }
+          />
         </div>
       )}
     </div>

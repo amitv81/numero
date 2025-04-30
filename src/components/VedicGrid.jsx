@@ -2,12 +2,24 @@ import { useState } from "react";
 import Modal from "./Modal";
 import numerologyData from "../data/numerologyData.json";
 
-const VedicGrid = ({ vedicGrid, vedicOrder }) => {
+const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha }) => {
   const [modalData, setModalData] = useState(null);
 
   // Get occurrences of a number in the grid
-  const getNumberOccurrences = (numbers) => {
-    return numbers.length > 0 ? numbers.join(", ") : "-";
+  const getNumberOccurrences = (numbers, index) => {
+    const baseNumber = numbers.length > 0 ? numbers.join(", ") : "-";
+    const isDashaNumber = currentDasha && vedicOrder[index] === currentDasha;
+
+    return (
+      <>
+        <span className="text-lg lg:text-3xl font-bold text-purple-800">
+          {baseNumber}{" "}
+          {isDashaNumber && (
+            <span className=" text-red-600">{currentDasha}</span>
+          )}
+        </span>
+      </>
+    );
   };
 
   const handleNumberClick = (number) => {
@@ -95,15 +107,17 @@ const VedicGrid = ({ vedicGrid, vedicOrder }) => {
                   {vedicGrid.map((numbers, index) => (
                     <div key={index} className="w-1/3 p-2">
                       <div
-                        className="h-full bg-white border-2 border-purple-200 rounded-lg p-6 flex flex-col items-center justify-center relative cursor-pointer hover:bg-purple-50 transition-colors shadow-sm hover:shadow-md"
+                        className={`h-full bg-white border-2 rounded-lg p-6 flex flex-col items-center justify-center relative cursor-pointer hover:bg-purple-50 transition-colors shadow-sm hover:shadow-md ${
+                          currentDasha && vedicOrder[index] === currentDasha
+                            ? "border-purple-500"
+                            : "border-purple-200"
+                        }`}
                         onClick={() => handleNumberClick(vedicOrder[index])}
                       >
                         <span className="absolute top-3 left-3 text-base font-medium text-purple-600">
                           {vedicOrder[index]}
                         </span>
-                        <span className="text-lg lg:text-3xl font-bold text-purple-800">
-                          {getNumberOccurrences(numbers)}
-                        </span>
+                        {getNumberOccurrences(numbers, index)}
                       </div>
                     </div>
                   ))}

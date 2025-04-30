@@ -124,3 +124,31 @@ export const isEnemyNumber = (nameNumber, birthNumber, destinyNumber) => {
 export const isPositiveNumber = (number) => {
   return positiveNumbersData.positiveNumbers.includes(number);
 };
+
+// Calculate Dasha Numbers from birth year to 80 years ahead
+export const calculateDashaNumbers = (birthYear, birthNumber) => {
+  const endYear = birthYear + 80; // Calculate 80 years from birth year
+  const dashaNumbers = [];
+  let currentDasha = birthNumber;
+  let yearCounter = birthYear;
+  let yearsInCurrentDasha = 0;
+
+  while (yearCounter <= endYear) {
+    // Add years for the current dasha number
+    for (let i = 0; i < currentDasha && yearCounter <= endYear; i++) {
+      dashaNumbers.push({
+        year: yearCounter,
+        dashaNumber: currentDasha,
+        remainingYears: currentDasha - yearsInCurrentDasha - 1,
+      });
+      yearCounter++;
+      yearsInCurrentDasha++;
+    }
+
+    // Reset years counter and move to next dasha number
+    yearsInCurrentDasha = 0;
+    currentDasha = currentDasha === 9 ? 1 : currentDasha + 1;
+  }
+
+  return dashaNumbers;
+};
