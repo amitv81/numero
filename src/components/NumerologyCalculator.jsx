@@ -2,8 +2,13 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import VedicGrid from "./VedicGrid";
-import numerologyData from "../data/numerologyData.json";
-import positiveNumbersData from "../data/positiveNumbers.json";
+import {
+  calculateNameNumbers,
+  calculateSingleDigit,
+  calculateVedicGrid,
+  isEnemyNumber,
+  isPositiveNumber,
+} from "../utils/numerologyCalculations";
 
 const NumerologyCalculator = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -15,72 +20,6 @@ const NumerologyCalculator = () => {
   // Updated Vedic grid order: 3-1-9, 6-7-5, 2-8-4
   const vedicOrder = [3, 1, 9, 6, 7, 5, 2, 8, 4];
 
-  // Name number mapping
-  const nameNumberMap = {
-    a: 1,
-    i: 1,
-    j: 1,
-    y: 1,
-    q: 1,
-    b: 2,
-    k: 2,
-    r: 2,
-    c: 3,
-    g: 3,
-    l: 3,
-    s: 3,
-    d: 4,
-    m: 4,
-    t: 4,
-    h: 5,
-    e: 5,
-    n: 5,
-    x: 5,
-    u: 6,
-    v: 6,
-    w: 6,
-    o: 7,
-    z: 7,
-    p: 8,
-    f: 8,
-  };
-
-  // Calculate name number for a specific part of the name
-  const calculateNameNumberForPart = (namePart) => {
-    if (!namePart) return null;
-
-    const nameSum = namePart
-      .toLowerCase()
-      .split("")
-      .filter((char) => /[a-z]/.test(char))
-      .reduce((sum, char) => {
-        return sum + (nameNumberMap[char] || 0);
-      }, 0);
-
-    // Only reduce if number is more than 2 digits
-    let nameNumber = nameSum;
-    while (nameNumber > 80) {
-      nameNumber = String(nameNumber)
-        .split("")
-        .reduce((sum, digit) => sum + parseInt(digit), 0);
-    }
-
-    return nameNumber;
-  };
-
-  // Calculate name number for full name and first name
-  const calculateNameNumbers = (fullName) => {
-    if (!fullName) return { fullNameNumber: null, firstNameNumber: null };
-
-    const nameParts = fullName.trim().split(/\s+/);
-    const firstName = nameParts[0];
-
-    const firstNameNumber = calculateNameNumberForPart(firstName);
-    const fullNameNumber = calculateNameNumberForPart(fullName);
-
-    return { fullNameNumber, firstNameNumber };
-  };
-
   const handleNameChange = (event) => {
     const newName = event.target.value;
     setName(newName);
@@ -91,109 +30,19 @@ const NumerologyCalculator = () => {
       firstNameNumber: firstNameNumber,
     }));
 
-    // Calculate single digit name number
-    let singleDigit = fullNameNumber;
-    while (singleDigit > 9) {
-      singleDigit = String(singleDigit)
-        .split("")
-        .reduce((sum, digit) => sum + parseInt(digit), 0);
-    }
-    setSingleDigitNameNumber(singleDigit);
+    setSingleDigitNameNumber(calculateSingleDigit(fullNameNumber));
   };
 
-  const calculateVedicGrid = (date) => {
-    if (!date) return;
-
-    const day = date.getDate().toString();
-    const month = (date.getMonth() + 1).toString();
-    // Get only last two digits of the year
-    const year = date.getFullYear().toString().slice(-2);
-
-    // Initialize grid with empty arrays for each position
-    const newGrid = Array(9)
-      .fill()
-      .map(() => []);
-
-    // Helper function to add numbers to specific grid positions
-    const addToGrid = (number) => {
-      // Find all positions where this number should appear
-      vedicOrder.forEach((gridNum, index) => {
-        if (gridNum === number) {
-          newGrid[index] = [...newGrid[index], number];
-        }
-      });
-    };
-
-    // Process each digit from day
-    day.split("").forEach((digit) => {
-      const num = parseInt(digit);
-      if (num !== 0) addToGrid(num);
-    });
-
-    // Process each digit from month
-    month.split("").forEach((digit) => {
-      const num = parseInt(digit);
-      if (num !== 0) addToGrid(num);
-    });
-
-    // Process each digit from year (now only last 2 digits)
-    year.split("").forEach((digit) => {
-      const num = parseInt(digit);
-      if (num !== 0) addToGrid(num);
-    });
-
-    // Calculate birth number and add it to the grid
-    let birthNumber = String(day)
-      .split("")
-      .reduce((sum, digit) => sum + parseInt(digit), 0);
-    while (birthNumber > 9) {
-      birthNumber = String(birthNumber)
-        .split("")
-        .reduce((sum, digit) => sum + parseInt(digit), 0);
-    }
-    addToGrid(birthNumber);
-
-    // Calculate destiny number (using full year for destiny number calculation)
-    const fullYear = date.getFullYear().toString();
-    const dateString = `${day}${month}${fullYear}`;
-    let destinyNumber = dateString
-      .split("")
-      .reduce((sum, digit) => sum + parseInt(digit), 0);
-
-    while (destinyNumber > 9) {
-      destinyNumber = String(destinyNumber)
-        .split("")
-        .reduce((sum, digit) => sum + parseInt(digit), 0);
-    }
-    addToGrid(destinyNumber); // Add destiny number to the grid
-
-    setVedicGrid(newGrid);
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    const result = calculateVedicGrid(date, vedicOrder, name);
+    setVedicGrid(result.newGrid);
     setNumerologyResult((prev) => ({
       ...prev,
-      destinyNumber,
-      birthNumber,
-      nameNumber: calculateNameNumberForPart(name),
+      destinyNumber: result.destinyNumber,
+      birthNumber: result.birthNumber,
+      nameNumber: result.nameNumber,
     }));
-  };
-
-  const isEnemyNumber = (nameNumber, birthNumber, destinyNumber) => {
-    if (!nameNumber || !birthNumber || !destinyNumber) return false;
-
-    // Get enemy numbers for birth number and destiny number
-    const birthEnemyNumbers =
-      numerologyData.numbers[birthNumber]?.enemyNumbers || [];
-    const destinyEnemyNumbers =
-      numerologyData.numbers[destinyNumber]?.enemyNumbers || [];
-
-    // Check if name number is in either enemy number list
-    return (
-      birthEnemyNumbers.includes(nameNumber) ||
-      destinyEnemyNumbers.includes(nameNumber)
-    );
-  };
-
-  const isPositiveNumber = (number) => {
-    return positiveNumbersData.positiveNumbers.includes(number);
   };
 
   return (
@@ -222,15 +71,12 @@ const NumerologyCalculator = () => {
                 <div className="relative">
                   <DatePicker
                     selected={selectedDate}
-                    onChange={(date) => {
-                      setSelectedDate(date);
-                      calculateVedicGrid(date);
-                    }}
+                    onChange={handleDateChange}
                     dateFormat="dd/MM/yyyy"
                     placeholderText="Select date"
                     className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
                     onChangeRaw={(event) => {
-                      const value = event.target.value.replace(/\D/g, ""); // Remove non-digits
+                      const value = event.target.value.replace(/\D/g, "");
                       if (value.length >= 8) {
                         const day = value.substring(0, 2);
                         const month = value.substring(2, 4);
