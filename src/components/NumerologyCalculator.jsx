@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import VedicGrid from "./VedicGrid";
 import DashaNumbers from "./DashaNumbers";
+import AntarDashaGrid from "./AntarDashaGrid";
 import {
   calculateNameNumbers,
   calculateSingleDigit,
@@ -10,6 +11,7 @@ import {
   isEnemyNumber,
   isPositiveNumber,
   calculateDashaNumbers,
+  calculateAntarDashaNumber,
 } from "../utils/numerologyCalculations";
 
 const NumerologyCalculator = () => {
@@ -20,6 +22,7 @@ const NumerologyCalculator = () => {
   const [singleDigitNameNumber, setSingleDigitNameNumber] = useState(null);
   const [dashaNumbers, setDashaNumbers] = useState([]);
   const [showDasha, setShowDasha] = useState(false);
+  const [antarDashaSum, setAntarDashaSum] = useState(null);
 
   // Updated Vedic grid order: 3-1-9, 6-7-5, 2-8-4
   const vedicOrder = [3, 1, 9, 6, 7, 5, 2, 8, 4];
@@ -55,6 +58,13 @@ const NumerologyCalculator = () => {
         result.birthNumber
       );
       setDashaNumbers(dashas);
+
+      // Calculate Antar Dasha numbers for current year while preserving birth month and day
+      const currentYear = new Date().getFullYear();
+      const currentDate = new Date(date);
+      currentDate.setFullYear(currentYear);
+      const antarDashaResult = calculateAntarDashaNumber(currentDate);
+      setAntarDashaSum(antarDashaResult?.antarDashaNumber || null);
     }
   };
 
@@ -211,16 +221,20 @@ const NumerologyCalculator = () => {
 
       {/* Vedic Grid Section */}
       {selectedDate && (
-        <div className="w-full">
-          <VedicGrid
-            vedicGrid={vedicGrid}
-            vedicOrder={vedicOrder}
-            currentDasha={
-              dashaNumbers.find((d) => d.year === new Date().getFullYear())
-                ?.dashaNumber
-            }
-          />
-        </div>
+        <>
+          <div className="w-full">
+            <VedicGrid
+              vedicGrid={vedicGrid}
+              vedicOrder={vedicOrder}
+              currentDasha={
+                dashaNumbers.find((d) => d.year === new Date().getFullYear())
+                  ?.dashaNumber
+              }
+              antarDashaSum={antarDashaSum}
+            />
+          </div>
+          <AntarDashaGrid birthDate={selectedDate} />
+        </>
       )}
     </div>
   );

@@ -87,7 +87,10 @@ export const calculateVedicGrid = (date, vedicOrder, name) => {
   let birthNumber = calculateSingleDigit(
     day.split("").reduce((sum, digit) => sum + parseInt(digit), 0)
   );
-  addToGrid(birthNumber);
+  // Only add birth number to grid if its day is not one of the special numbers
+  if (![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30].includes(parseInt(day))) {
+    addToGrid(birthNumber);
+  }
 
   // Calculate destiny number (using full year)
   const fullYear = date.getFullYear().toString();
@@ -151,4 +154,65 @@ export const calculateDashaNumbers = (birthYear, birthNumber) => {
   }
 
   return dashaNumbers;
+};
+
+// Calculate Antar Dasha Numbers from birth date
+export const calculateAntarDashaNumber = (birthDate) => {
+  if (!birthDate) return null;
+
+  // 1. Get last 2 digits of year
+  const yearLastTwoDigits = birthDate.getFullYear().toString().slice(-2);
+
+  // 2. Get birth number from day
+  const day = birthDate.getDate();
+  const birthNumber = calculateSingleDigit(day);
+
+  // 3. Get month number
+  const monthNumber = birthDate.getMonth() + 1; // Adding 1 since getMonth() returns 0-11
+
+  // 4. Get day of the week with custom number mapping
+  const jsDay = birthDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  const dayNumberMap = {
+    0: 1, // Sunday
+    1: 2, // Monday
+    2: 9, // Tuesday
+    3: 5, // Wednesday
+    4: 3, // Thursday
+    5: 6, // Friday
+    6: 8, // Saturday
+  };
+  const dayNumber = dayNumberMap[jsDay];
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const dayName = daysOfWeek[jsDay];
+
+  // Calculate sum of birth, day and month numbers and reduce to single digit
+  const antarDashaNumber = calculateSingleDigit(
+    yearLastTwoDigits + birthNumber + dayNumber + monthNumber
+  );
+
+  console.log({
+    yearLastTwoDigits,
+    birthNumber,
+    monthNumber,
+    dayNumber,
+    dayName,
+    antarDashaNumber,
+  });
+
+  return {
+    yearLastTwoDigits,
+    birthNumber,
+    monthNumber,
+    dayNumber,
+    dayName,
+    antarDashaNumber,
+  };
 };

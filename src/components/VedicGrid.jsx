@@ -2,20 +2,25 @@ import { useState } from "react";
 import Modal from "./Modal";
 import numerologyData from "../data/numerologyData.json";
 
-const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha }) => {
+const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
   const [modalData, setModalData] = useState(null);
 
   // Get occurrences of a number in the grid
   const getNumberOccurrences = (numbers, index) => {
     const baseNumber = numbers.length > 0 ? numbers.join(", ") : "-";
     const isDashaNumber = currentDasha && vedicOrder[index] === currentDasha;
+    const gridNumber = vedicOrder[index];
+    const isAntarDashaSum = antarDashaSum === gridNumber;
 
     return (
       <>
         <span className="text-lg lg:text-3xl font-bold text-purple-800">
           {baseNumber}{" "}
           {isDashaNumber && (
-            <span className=" text-red-600">{currentDasha}</span>
+            <span className="text-red-600">{currentDasha}</span>
+          )}
+          {isAntarDashaSum && (
+            <span className="text-orange-500">{antarDashaSum}</span>
           )}
         </span>
       </>
@@ -133,7 +138,7 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha }) => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-medium text-purple-700">
-                    Mental Plane (Top Row)
+                    Mental/Practical/Fire Plane (Top Row)
                   </h4>
                   <p className="text-gray-600">
                     {numerologyData.gridPositions.topRow.meaning}
@@ -141,7 +146,7 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha }) => {
                 </div>
                 <div>
                   <h4 className="font-medium text-purple-700">
-                    Emotional Plane (Middle Row)
+                    Materialistic/Air Plane (Middle Row)
                   </h4>
                   <p className="text-gray-600">
                     {numerologyData.gridPositions.middleRow.meaning}
@@ -149,7 +154,7 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha }) => {
                 </div>
                 <div>
                   <h4 className="font-medium text-purple-700">
-                    Physical Plane (Bottom Row)
+                    Emotional/Water Plane (Bottom Row)
                   </h4>
                   <p className="text-gray-600">
                     {numerologyData.gridPositions.bottomRow.meaning}
