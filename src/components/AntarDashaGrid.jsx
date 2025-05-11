@@ -16,7 +16,13 @@ const AntarDashaGrid = ({ birthDate }) => {
   const [yearToOptions, setYearToOptions] = useState([]);
   const [yearGrids, setYearGrids] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedGridNumbers, setSelectedGridNumbers] = useState([]);
+  const [selectedGridNumbers, setSelectedGridNumbers] = useState({
+    regularNumbers: [],
+    negativeNumbers: [],
+    specialNumbers: [],
+    negativityInfo: {},
+    predictions: {},
+  });
   const [selectedYear, setSelectedYear] = useState(null);
 
   // Vedic grid order: 3-1-9, 6-7-5, 2-8-4
@@ -127,6 +133,7 @@ const AntarDashaGrid = ({ birthDate }) => {
       const predictions = analyzePredictions({
         ...gridData,
         negativeNumbers,
+        regularNumbers,
       });
 
       // Create array for Antar Dasha and Dasha numbers
@@ -259,7 +266,7 @@ const AntarDashaGrid = ({ birthDate }) => {
         title={`Grid Analysis for Year ${selectedYear}`}
       >
         <div className="space-y-6">
-          {/* Predictions Section */}
+          {/* Finance Predictions Section */}
           {selectedGridNumbers.predictions?.finance?.length > 0 && (
             <div>
               <p className="text-lg text-green-800 mb-2">
@@ -277,7 +284,31 @@ const AntarDashaGrid = ({ birthDate }) => {
                       }`}
                     >
                       <p className="font-medium">{prediction.message}</p>
-                      <p className="text-sm mt-1">{prediction.reason}</p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Property Predictions Section */}
+          {selectedGridNumbers.predictions?.property?.length > 0 && (
+            <div>
+              <p className="text-lg text-green-800 mb-2">
+                Property Predictions:
+              </p>
+              <div className="space-y-2">
+                {selectedGridNumbers.predictions.property.map(
+                  (prediction, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-4 rounded-lg ${
+                        prediction.type === "positive"
+                          ? "bg-green-50 text-green-800"
+                          : "bg-red-50 text-red-800"
+                      }`}
+                    >
+                      <p className="font-medium">{prediction.message}</p>
                     </div>
                   )
                 )}
