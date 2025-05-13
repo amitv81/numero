@@ -33,7 +33,7 @@
       "luckyNumbers": [1, 2, 4, 7],
       "neutralNumbers": [5, 6, 8],
       "enemyNumbers": [3, 9],
-      "positive": [
+      "positivity": [
         "Authoritative",
         "Good money",
         "Initiators",
@@ -93,7 +93,7 @@
       "luckyNumbers": [1, 2, 7, 9],
       "neutralNumbers": [3, 4, 5, 6],
       "enemyNumbers": [8],
-      "positive": [
+      "positivity": [
         "motherly instincts",
         "soft-spoken",
         "creative people",
@@ -169,7 +169,7 @@
       "luckyNumbers": [3, 6, 9],
       "neutralNumbers": [2, 4, 5, 7, 8],
       "enemyNumbers": [1],
-      "positive": [
+      "positivity": [
         "confident",
         "knowledgeable",
         "Wisdom",
@@ -246,7 +246,7 @@
       "luckyNumbers": [1, 2, 4, 7, 8],
       "neutralNumbers": [5, 6],
       "enemyNumbers": [3, 9],
-      "positive": [
+      "positivity": [
         "Sharp mind",
         "good memory",
         "Out of box thinking",
@@ -254,7 +254,7 @@
         "good researcher",
         "Good at convincing people",
         "salesman",
-        "Negative Attributes of 4 turn into positive attributes",
+        "Negative Attributes of 4 turn into positivity attributes",
         "they do what they promise",
         "fruitful travel",
         "logical",
@@ -313,7 +313,7 @@
       "luckyNumbers": [3, 5, 6, 9],
       "neutralNumbers": [1, 2, 4, 7, 8],
       "enemyNumbers": [],
-      "positive": [
+      "positivity": [
         "Logical",
         "know how to make money",
         "good businessman",
@@ -380,7 +380,7 @@
       "luckyNumbers": [3, 6, 9],
       "neutralNumbers": [1, 2, 4, 5, 7, 8],
       "enemyNumbers": [],
-      "positive": [
+      "positivity": [
         "very creative",
         "food lover",
         "great cook",
@@ -440,7 +440,37 @@
       "luckyNumbers": [2, 3, 6],
       "neutralNumbers": [1, 4, 5, 7, 8],
       "enemyNumbers": [9],
-      "negativity": [""],
+      "positivity": [
+        "stability in every sphere of life",
+        "balancing number",
+        "Realisation of desires",
+        "Always on travel",
+        "never sitting at home",
+        "Logical",
+        "deep thinkers",
+        "things come easy to these people",
+        "Lucky people who come out of every situation",
+        "Stable life",
+        "don’t face ups and downs in their lives with god’s grace",
+        "Spiritual",
+        "good for partnerships",
+        "healers",
+        "intuition"
+      ],
+      "negativity": [
+        "always demanding reasoning",
+        "unstable",
+        "easy betrayal",
+        "problems in married life",
+        "Very inquisitive",
+        "Suspects everything",
+        "instability in life",
+        "Anxiety",
+        "meaningless travels",
+        "learns with losses",
+        "reasoning to the level of irritation",
+        "Tries to over-reason with everything (baal ki khaal nikalte hain)"
+      ],
       "remedies": {
         "gemstones": ["Cat's Eye", "Brown Tourmaline"],
         "fastingDay": "Monday",
@@ -481,7 +511,33 @@
       "luckyNumbers": [3, 4, 6, 8],
       "neutralNumbers": [2, 5, 7],
       "enemyNumbers": [1, 9],
-      "negativity": [""],
+      "positivity": [
+        "Never leaves work incomplete",
+        "can't see tears in others eyes",
+        "very helping in nature",
+        "financial planning is very strong",
+        "No depression",
+        "deep thinkers",
+        "extremely helpful",
+        "money in extreme",
+        "govt. job",
+        "the negativity of 8 is decreased",
+        "they reach the peak in finances",
+        "they have a strong intuition",
+        "They become 0 once in their life and after that rise above limits"
+      ],
+      "negativity": [
+        "Life is full of struggle",
+        "disappointments",
+        "delays",
+        "deep thinkers",
+        "bipolar attitude",
+        "can go into depression",
+        "can’t forgive easily",
+        "egoistic",
+        "can't sit idle",
+        "doesn’t share their heart completely"
+      ],
       "remedies": {
         "gemstones": ["Blue Sapphire", "Black Pearl"],
         "fastingDay": "Saturday",
@@ -522,7 +578,32 @@
       "luckyNumbers": [3, 6, 9],
       "neutralNumbers": [1, 2, 5, 8],
       "enemyNumbers": [4, 7],
-      "negativity": [""],
+      "positivity": [
+        "Highly energetic",
+        "very active",
+        "bold",
+        "courageous",
+        "guts",
+        "fights for justice",
+        "Confident",
+        "participates in everything",
+        "takes a stand and sticks to it",
+        "intelligent",
+        "self improvement",
+        "Aggressive",
+        "stubborn",
+        "argumentative",
+        "helping in nature",
+        "impulsive"
+      ],
+      "negativity": [
+        "Argumentative",
+        "stubborn",
+        "aggressive",
+        "like a volcano won’t say things but when agitated their anger explodes like a volcano",
+        "The argument to irritation",
+        "normally lacks courage & confidence"
+      ],
       "remedies": {
         "gemstones": ["Red Coral", "Carnelian"],
         "fastingDay": "Tuesday",

@@ -8,6 +8,7 @@ import {
 } from "../utils/numerologyCalculations";
 import { analyzeNumbersNegativity } from "../utils/negativityCalculations";
 import { analyzePredictions } from "../utils/predictionCalculations";
+import { calculateYogs } from "../utils/yogCalculations";
 
 const AntarDashaGrid = ({ birthDate }) => {
   const [yearFrom, setYearFrom] = useState("");
@@ -22,6 +23,7 @@ const AntarDashaGrid = ({ birthDate }) => {
     specialNumbers: [],
     negativityInfo: {},
     predictions: {},
+    yogs: [],
   });
   const [selectedYear, setSelectedYear] = useState(null);
 
@@ -144,12 +146,22 @@ const AntarDashaGrid = ({ birthDate }) => {
         ...(gridData.dashaNumber ? [`D:${gridData.dashaNumber}`] : []),
       ];
 
+      // Calculate Yogs
+      const allNumbers = [
+        ...gridData.vedicGrid.flat().filter((num) => num !== ""),
+        gridData.antarDashaNumber,
+        gridData.dashaNumber,
+      ].filter(Boolean);
+
+      const yogs = calculateYogs(allNumbers);
+
       setSelectedGridNumbers({
         regularNumbers,
         negativeNumbers,
         specialNumbers,
         negativityInfo,
         predictions,
+        yogs, // Add yogs to the state
       });
       setSelectedYear(gridData.year);
       setIsModalOpen(true);
@@ -266,6 +278,32 @@ const AntarDashaGrid = ({ birthDate }) => {
         title={`Grid Analysis for Year ${selectedYear}`}
       >
         <div className="space-y-6">
+          {/* Yog Predictions Section */}
+          {selectedGridNumbers.yogs?.length > 0 && (
+            <div className="bg-purple-50 p-4 rounded-lg mb-4">
+              <h4 className="font-semibold text-purple-700 mb-2">
+                Active Yogs
+              </h4>
+              <div className="space-y-4">
+                {selectedGridNumbers.yogs.map((yog, index) => (
+                  <div
+                    key={index}
+                    className="border-b border-purple-200 pb-3 last:border-0"
+                  >
+                    <h5 className="font-medium text-purple-600 mb-2">
+                      {yog.name}
+                    </h5>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm pl-2">
+                      {yog.description.map((point, idx) => (
+                        <li key={idx}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Finance Predictions Section */}
           {selectedGridNumbers.predictions?.finance?.length > 0 && (
             <div>
