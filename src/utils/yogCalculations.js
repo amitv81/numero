@@ -13,15 +13,26 @@ const isNumberMissing = (numbers, targetNumber) => {
 
 const calculateYogs = (numbers) => {
   // Count occurrences of numbers 4, 5 and 9
+  const count1 = countNumberOccurrences(numbers, 1);
+  const count2 = countNumberOccurrences(numbers, 2);
+  const count3 = countNumberOccurrences(numbers, 3);
   const count4 = countNumberOccurrences(numbers, 4);
   const count5 = countNumberOccurrences(numbers, 5);
-  const count9 = countNumberOccurrences(numbers, 9);
+  const count6 = countNumberOccurrences(numbers, 6);
+  const count7 = countNumberOccurrences(numbers, 7);
   const count8 = countNumberOccurrences(numbers, 8);
+  const count9 = countNumberOccurrences(numbers, 9);
 
   // Check if numbers are missing
-  const is5Missing = isNumberMissing(numbers, 5);
-  const is9Missing = isNumberMissing(numbers, 9);
+  const is1Missing = isNumberMissing(numbers, 1);
   const is2Missing = isNumberMissing(numbers, 2);
+  const is3Missing = isNumberMissing(numbers, 3);
+  const is4Missing = isNumberMissing(numbers, 4);
+  const is5Missing = isNumberMissing(numbers, 5);
+  const is6Missing = isNumberMissing(numbers, 6);
+  const is7Missing = isNumberMissing(numbers, 7);
+  const is8Missing = isNumberMissing(numbers, 8);
+  const is9Missing = isNumberMissing(numbers, 9);
 
   const yogs = [];
 
@@ -84,6 +95,216 @@ const calculateYogs = (numbers) => {
         "This combination is great for research and if natives have this combination in their birth chart, they will do very well in research-related vocationCannot control their speech",
         "Married life is generally problematic",
         "The Natives with this combination build air castles, and most of their plans and talks will be in the air",
+      ],
+    });
+  }
+
+  // Chatur Yog: Single 9 and single 5, and missing 4
+  if (count9 === 1 && count5 === 1 && is4Missing) {
+    yogs.push({
+      name: "Chatur Yog",
+      description: [
+        "The native is extremely sharp-minded and street-smart",
+        "They are very clever and will always be looking to make money",
+        "Straight-forward and blunt in what they say",
+        "They will never give you a loss",
+      ],
+    });
+  }
+  // Mha Chatur Yog: Single 9 and multiple 5, and missing 4
+  if (count9 === 1 && count5 >= 1 && is4Missing) {
+    yogs.push({
+      name: "Mha Chatur Yog",
+      description: [
+        "The native is very clever and will always be looking to make money",
+        "May cheat others",
+        "Might commit financial fraud",
+        "Very very sharp mind as multiple brains are active at a given point",
+      ],
+    });
+  }
+  // Buddhu Yog: Double 9 and single 5, and missing 4
+  if (count9 > 1 && count5 == 1 && is4Missing) {
+    yogs.push({
+      name: "Buddhu Yog",
+      description: [
+        "Slow mind person/Dumb person",
+        "Will remain confused",
+        "Will not be great at studies",
+      ],
+    });
+  }
+  // Confusion Yog: Double 9 and double 5, and missing 4
+  if (count9 > 1 && count5 > 1 && is4Missing) {
+    yogs.push({
+      name: "Confusion Yog",
+      description: [
+        "The speed of mercury will at times be slow and at times fast",
+        "The person will be confused as both fast and slow minds will work together",
+      ],
+    });
+  }
+  // Emotionless Love Yog: Single 7 and single 5, and missing 6
+  if (count7 === 1 && count5 === 1 && is6Missing) {
+    yogs.push({
+      name: "Emotionless Love",
+      description: [
+        "Native has the possibility of multiple love affairs",
+        "No emotions in love, or we can say it is plastic love and plastic beauty",
+        "Good communication skills",
+        "Interest in the occult science",
+        "Combination for becoming a model",
+      ],
+    });
+  }
+  // Anger Yog: Single/multiple 1 and single 9, and missing 3
+  if (count1 >= 1 && count9 === 1 && is3Missing) {
+    yogs.push({
+      name: "Anger Yog",
+      description: [
+        "These natives always remain angry",
+        "These people generally pursue post-graduation and are learned like Engineers, Surgeons etc",
+        "They like to work independently",
+      ],
+    });
+  }
+  // Gyan Yog: Single 3 and single 1, and missing 9
+  if (count3 === 1 && count1 === 1 && is9Missing) {
+    yogs.push({
+      name: "Gyan Yog",
+      description: [
+        "Natives with this combination are highly learned and pursue higher education",
+        "fame in professional life",
+        "Professional success only after hard work",
+        "They are always respected due to their wisdom and knowledge",
+        "They will rise high in life",
+        "Counsellors, consultants, teachers, and professionals where speech is important will help",
+      ],
+    });
+  }
+  // Depressive Yog: Single/double 2 and single 8, and missing 4
+  if (count2 >= 1 && count8 === 1 && is4Missing) {
+    yogs.push({
+      name: "Depressive Yog",
+      description: [
+        "The native suffers from an inferiority complex",
+        "Depressive nature",
+      ],
+    });
+  }
+  // Flirt Yog: Single 6 and single/multiple 7, and missing 5
+  if (count6 === 1 && count7 >= 1 && is5Missing) {
+    yogs.push({
+      name: "Flirt Yog",
+      description: [
+        "These people are very attractive",
+        "possibility of many love interests",
+        "Have multiple and stable love affairs(Single 7)",
+        "Instability in love affairs (Multiple 7)",
+        "Music and Art lovers",
+        "Would like to flirt and behave like a playboy",
+      ],
+    });
+  }
+  // Kalakar Yog: Single 6 and single/multiple 2, and missing 3
+  if (count6 === 1 && count2 >= 1 && is3Missing) {
+    yogs.push({
+      name: "Kalakar Yog",
+      description: [
+        "Natives with this combination are generally Media personalities, artistic in nature",
+        "These people are easily attracted to the opposite sex",
+      ],
+    });
+  }
+  // Quarrel Yog: Multiple 6 and single 2, and missing 3
+  if (count6 >= 2 && count2 === 1 && is3Missing) {
+    yogs.push({
+      name: "Quarrel Yog",
+      description: [
+        "Always fighting, especially with the opposite sex",
+        "They become foul mouth and the use of expletives(rude or swear words) and slang in their communication increases",
+        "They would be the ones who would start the quarrel",
+      ],
+    });
+  }
+  // Luck Yog: Single 1 and single 7, and missing 8
+  if (count1 === 1 && count7 === 1 && is8Missing) {
+    yogs.push({
+      name: "Luck Yog",
+      description: [
+        "Number one and seven both are Lucky",
+        "Early Job or Earning in life",
+        "Govt job at a young age or someone in the family working in govt",
+        "Loyal in love",
+      ],
+    });
+  }
+  // Rolacosta Yog: Single 2, Single 8 and single 4
+  if (count2 === 1 && count8 === 1 && count4 === 1) {
+    yogs.push({
+      name: "Rolacosta Yog",
+      description: [
+        "The native will experience a lot of ups and downs in life.",
+        "Rises high and falls also",
+        "These people can speak anything anywhere –whatever, whenever, wherever",
+        "Married life is troubled",
+      ],
+    });
+  }
+  // Success Yog: Single 1, Single 2 and missing 3 and missing 6
+  if (count1 === 1 && count2 === 1 && is6Missing && is3Missing) {
+    yogs.push({
+      name: "Success Yog",
+      description: [
+        "These natives rise very high in life and hold high positions",
+        "they will be either at the senior management level where a lot of people are working under them",
+        "they become politicians",
+        "These people also enjoy high financial status",
+      ],
+    });
+  }
+  // Success Yog: Single 1, Single 3 and Single 9
+  if (count3 === 1 && count1 === 1 && count9 === 1) {
+    yogs.push({
+      name: "Success Yog",
+      description: [
+        "The native rises high in life or dominates everywhere",
+        "these are male numbers and if present in the female chart, she will display manly qualities – tomboy, in behaviour and appearance as well",
+        "Good professional",
+        "spark in life",
+        "Passionate",
+        "Imaginative",
+        "will do whatever they think",
+        "hardworking and successful in life",
+      ],
+    });
+  }
+  // Luxury Yog: Single 6, Single 7 and Single 5
+  if (count6 >= 1 && count7 >= 1 && count5 >= 1) {
+    yogs.push({
+      name: "Luxury Yog",
+      description: [
+        "Enjoy all luxuries in life throughout, whether self-funded or otherwise",
+        "Business-minded",
+        "Interest in music and arts,",
+        "true lovers",
+        "counsellors and consultants",
+        "Prone to disputes and will have a harsh tone(66)",
+        "in-stable life(77)",
+        "Sharp mind(55)",
+      ],
+    });
+  }
+
+  // Spirituality Yog: Single 3, Single 7 and Single 9
+  if (count3 >= 1 && count7 >= 1 && count9 >= 1) {
+    yogs.push({
+      name: "Spirituality Yog",
+      description: [
+        "Native is said to have very high intuition power",
+        "It is also said that the person will not be satisfied in their physical relationships",
+        "Social service",
+        "This is the spirituality plane",
       ],
     });
   }
