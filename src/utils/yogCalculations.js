@@ -75,7 +75,7 @@ const calculateYogs = (numbers) => {
   // Strong Bandhan Yog: Multiple 9 and single 4, and 5 must be missing
   if (count9 > 1 && count4 === 1 && is5Missing) {
     yogs.push({
-      name: "Strong Bandhan Yog",
+      name: "Strong Bandhan Yog(99,4,Missing(5))",
       description: [
         "Either imprisoned or bound by health problems",
         "Hospitalization, Jail, Litigation and Health Problems",
@@ -88,7 +88,7 @@ const calculateYogs = (numbers) => {
   // Accident Yog: Single 8 and single 4, and 2 must be missing
   if (count8 === 1 && count4 === 1 && is2Missing) {
     yogs.push({
-      name: "Accident Yog",
+      name: "Accident Yog(8,4,Missing(2))",
       description: [
         "Makes native accident-prone",
         "The native behaves irrationally",
@@ -102,7 +102,7 @@ const calculateYogs = (numbers) => {
   // Chatur Yog: Single 9 and single 5, and missing 4
   if (count9 === 1 && count5 === 1 && is4Missing) {
     yogs.push({
-      name: "Chatur Yog",
+      name: "Chatur Yog(9m,5,Missing(4))",
       description: [
         "The native is extremely sharp-minded and street-smart",
         "They are very clever and will always be looking to make money",
@@ -114,7 +114,7 @@ const calculateYogs = (numbers) => {
   // Mha Chatur Yog: Single 9 and multiple 5, and missing 4
   if (count9 === 1 && count5 >= 1 && is4Missing) {
     yogs.push({
-      name: "Mha Chatur Yog",
+      name: "Mha Chatur Yog(9,5,Missing(4))",
       description: [
         "The native is very clever and will always be looking to make money",
         "May cheat others",
@@ -126,7 +126,7 @@ const calculateYogs = (numbers) => {
   // Buddhu Yog: Double 9 and single 5, and missing 4
   if (count9 > 1 && count5 == 1 && is4Missing) {
     yogs.push({
-      name: "Buddhu Yog",
+      name: "Buddhu Yog(99,5,Missing(4))",
       description: [
         "Slow mind person/Dumb person",
         "Will remain confused",
@@ -137,7 +137,7 @@ const calculateYogs = (numbers) => {
   // Confusion Yog: Double 9 and double 5, and missing 4
   if (count9 > 1 && count5 > 1 && is4Missing) {
     yogs.push({
-      name: "Confusion Yog",
+      name: "Confusion Yog(99,5,Missing(4))",
       description: [
         "The speed of mercury will at times be slow and at times fast",
         "The person will be confused as both fast and slow minds will work together",
@@ -147,7 +147,7 @@ const calculateYogs = (numbers) => {
   // Emotionless Love Yog: Single 7 and single 5, and missing 6
   if (count7 === 1 && count5 === 1 && is6Missing) {
     yogs.push({
-      name: "Emotionless Love",
+      name: "Emotionless Love(7,5,Missing(6))",
       description: [
         "Native has the possibility of multiple love affairs",
         "No emotions in love, or we can say it is plastic love and plastic beauty",
@@ -160,7 +160,7 @@ const calculateYogs = (numbers) => {
   // Anger Yog: Single/multiple 1 and single 9, and missing 3
   if (count1 >= 1 && count9 === 1 && is3Missing) {
     yogs.push({
-      name: "Anger Yog",
+      name: "Anger Yog(1,9,Missing(3))",
       description: [
         "These natives always remain angry",
         "These people generally pursue post-graduation and are learned like Engineers, Surgeons etc",
@@ -171,7 +171,7 @@ const calculateYogs = (numbers) => {
   // Gyan Yog: Single 3 and single 1, and missing 9
   if (count3 === 1 && count1 === 1 && is9Missing) {
     yogs.push({
-      name: "Gyan Yog",
+      name: "Gyan Yog(3,1,Missing(9))",
       description: [
         "Natives with this combination are highly learned and pursue higher education",
         "fame in professional life",
@@ -185,7 +185,7 @@ const calculateYogs = (numbers) => {
   // Depressive Yog: Single/double 2 and single 8, and missing 4
   if (count2 >= 1 && count8 === 1 && is4Missing) {
     yogs.push({
-      name: "Depressive Yog",
+      name: "Depressive Yog(2,8,Missing(4))",
       description: [
         "The native suffers from an inferiority complex",
         "Depressive nature",
@@ -195,7 +195,7 @@ const calculateYogs = (numbers) => {
   // Flirt Yog: Single 6 and single/multiple 7, and missing 5
   if (count6 === 1 && count7 >= 1 && is5Missing) {
     yogs.push({
-      name: "Flirt Yog",
+      name: "Flirt Yog(1,7,Missing(5))",
       description: [
         "These people are very attractive",
         "possibility of many love interests",
@@ -209,7 +209,7 @@ const calculateYogs = (numbers) => {
   // Kalakar Yog: Single 6 and single/multiple 2, and missing 3
   if (count6 === 1 && count2 >= 1 && is3Missing) {
     yogs.push({
-      name: "Kalakar Yog",
+      name: "Kalakar Yog(6,2,Missing(3))",
       description: [
         "Natives with this combination are generally Media personalities, artistic in nature",
         "These people are easily attracted to the opposite sex",
@@ -219,7 +219,7 @@ const calculateYogs = (numbers) => {
   // Quarrel Yog: Multiple 6 and single 2, and missing 3
   if (count6 >= 2 && count2 === 1 && is3Missing) {
     yogs.push({
-      name: "Quarrel Yog",
+      name: "Quarrel Yog(6,2,Missing(3))",
       description: [
         "Always fighting, especially with the opposite sex",
         "They become foul mouth and the use of expletives(rude or swear words) and slang in their communication increases",
@@ -230,7 +230,7 @@ const calculateYogs = (numbers) => {
   // Luck Yog: Single 1 and single 7, and missing 8
   if (count1 === 1 && count7 === 1 && is8Missing) {
     yogs.push({
-      name: "Luck Yog",
+      name: "Luck Yog(1,7,Missing(8))",
       description: [
         "Number one and seven both are Lucky",
         "Early Job or Earning in life",
@@ -242,7 +242,7 @@ const calculateYogs = (numbers) => {
   // Rolacosta Yog: Single 2, Single 8 and single 4
   if (count2 === 1 && count8 === 1 && count4 === 1) {
     yogs.push({
-      name: "Rolacosta Yog",
+      name: "Rolacosta Yog(2,8,4)",
       description: [
         "The native will experience a lot of ups and downs in life.",
         "Rises high and falls also",
@@ -254,7 +254,7 @@ const calculateYogs = (numbers) => {
   // Success Yog: Single 1, Single 2 and missing 3 and missing 6
   if (count1 === 1 && count2 === 1 && is6Missing && is3Missing) {
     yogs.push({
-      name: "Success Yog",
+      name: "Success Yog(1,2,Missing(3,6))",
       description: [
         "These natives rise very high in life and hold high positions",
         "they will be either at the senior management level where a lot of people are working under them",
@@ -266,7 +266,7 @@ const calculateYogs = (numbers) => {
   // Success Yog: Single 1, Single 3 and Single 9
   if (count3 === 1 && count1 === 1 && count9 === 1) {
     yogs.push({
-      name: "Success Yog",
+      name: "Success Yog(3,1,9)",
       description: [
         "The native rises high in life or dominates everywhere",
         "these are male numbers and if present in the female chart, she will display manly qualities – tomboy, in behaviour and appearance as well",
@@ -282,7 +282,7 @@ const calculateYogs = (numbers) => {
   // Luxury Yog: Single 6, Single 7 and Single 5
   if (count6 >= 1 && count7 >= 1 && count5 >= 1) {
     yogs.push({
-      name: "Luxury Yog",
+      name: "Luxury Yog(6,7,5)",
       description: [
         "Enjoy all luxuries in life throughout, whether self-funded or otherwise",
         "Business-minded",
@@ -299,7 +299,7 @@ const calculateYogs = (numbers) => {
   // Spirituality Yog: Single 3, Single 7 and Single 9
   if (count3 >= 1 && count7 >= 1 && count9 >= 1) {
     yogs.push({
-      name: "Spirituality Yog",
+      name: "Spirituality Yog(3,7,9)",
       description: [
         "Native is said to have very high intuition power",
         "It is also said that the person will not be satisfied in their physical relationships",

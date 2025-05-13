@@ -70,18 +70,17 @@ const AntarDashaGrid = ({ birthDate }) => {
     }
     setYearGrids(grids);
   }, [yearFrom, yearTo, birthDate, baseVedicGrid]);
-
   useEffect(() => {
     if (birthDate) {
       // Generate year options for "Year From" dropdown
       const birthYear = birthDate.getFullYear();
       const currentYear = new Date().getFullYear();
       const fromYears = [];
-      for (let year = birthYear; year <= currentYear; year++) {
+      for (let year = birthYear; year <= currentYear + 5; year++) {
         fromYears.push(year);
       }
       setYearFromOptions(fromYears);
-      setYearFrom(birthYear); // Set default value to birth year
+      setYearFrom(currentYear); // Set default value to current year
 
       // Generate year options for "Year To" dropdown
       const toYears = [];
@@ -89,7 +88,7 @@ const AntarDashaGrid = ({ birthDate }) => {
         toYears.push(year);
       }
       setYearToOptions(toYears);
-      setYearTo(currentYear); // Set default value to current year
+      setYearTo(currentYear + 5); // Set default value to current year + 5
     }
   }, [birthDate]);
 

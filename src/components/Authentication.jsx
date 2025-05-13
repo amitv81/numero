@@ -70,7 +70,7 @@ const Authentication = ({ onAuthenticated }) => {
               Enter Authentication Code
             </label>
             <input
-              type="text"
+              type="password"
               id="code"
               value={code}
               onChange={(e) => setCode(e.target.value)}
