@@ -29,7 +29,7 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
             <span className="text-red-600">{currentDasha}</span>
           )}
           {isAntarDashaSum && (
-            <span className="text-orange-500">{antarDashaSum}</span>
+            <span className="text-green-500">{antarDashaSum}</span>
           )}
         </span>
       </>
@@ -166,7 +166,7 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-5/12">
+          <div className="w-full lg:w-5/12 lg:block hidden">
             <div className="w-full space-y-6 bg-purple-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-purple-800">
                 Grid Planes

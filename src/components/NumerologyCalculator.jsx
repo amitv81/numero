@@ -1,9 +1,8 @@
 import { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import VedicGrid from "./VedicGrid";
 import DashaNumbers from "./DashaNumbers";
 import AntarDashaGrid from "./AntarDashaGrid";
+import BirthNumberModal from "./BirthNumberModal";
 import {
   calculateNameNumbers,
   calculateSingleDigit,
@@ -23,6 +22,8 @@ const NumerologyCalculator = () => {
   const [dashaNumbers, setDashaNumbers] = useState([]);
   const [showDasha, setShowDasha] = useState(false);
   const [antarDashaSum, setAntarDashaSum] = useState(null);
+  const [showBirthNumberModal, setShowBirthNumberModal] = useState(false);
+  const [selectedNumberType, setSelectedNumberType] = useState("birth"); // can be "birth" or "destiny"
 
   // Updated Vedic grid order: 3-1-9, 6-7-5, 2-8-4
   const vedicOrder = [3, 1, 9, 6, 7, 5, 2, 8, 4];
@@ -87,26 +88,23 @@ const NumerologyCalculator = () => {
                   placeholder="Enter your name"
                   className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
                 />
-              </div>
-
+              </div>{" "}
               {/* Date Input */}
               <div className="flex-1">
                 <div className="relative">
-                  <DatePicker
-                    selected={selectedDate}
-                    onChange={handleDateChange}
-                    dateFormat="dd/MM/yyyy"
-                    placeholderText="Select date"
-                    className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
-                    onChangeRaw={(event) => {
-                      const value = event.target.value.replace(/\D/g, "");
-                      if (value.length >= 8) {
-                        const day = value.substring(0, 2);
-                        const month = value.substring(2, 4);
-                        const year = value.substring(4, 8);
-                        event.target.value = `${day}/${month}/${year}`;
-                      }
+                  <input
+                    type="date"
+                    value={
+                      selectedDate
+                        ? selectedDate.toISOString().split("T")[0]
+                        : ""
+                    }
+                    onChange={(e) => {
+                      const date = new Date(e.target.value);
+                      date.setHours(12); // Set to noon to avoid timezone issues
+                      handleDateChange(date);
                     }}
+                    className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
                   />
                 </div>
               </div>
@@ -116,19 +114,32 @@ const NumerologyCalculator = () => {
           {numerologyResult && (
             <div className="w-full mt-8">
               <div className="flex flex-col lg:flex-row justify-center gap-4 lg:gap-8">
-                <div className="flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-200">
+                {/* Birth Number Box */}
+                <div
+                  className="flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-200 cursor-pointer hover:bg-purple-100 transition-colors"
+                  onClick={() => {
+                    setSelectedNumberType("birth");
+                    setShowBirthNumberModal(true);
+                  }}
+                >
                   <p className="text-lg text-purple-600 mb-2">Birth Number</p>
                   <p className="text-4xl font-bold text-purple-900">
                     {numerologyResult.birthNumber}
                   </p>
                 </div>
-                <div className="flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-200">
+                {/* Destiny Number Box */}{" "}
+                <div
+                  className="flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-200 cursor-pointer hover:bg-purple-100 transition-colors"
+                  onClick={() => {
+                    setSelectedNumberType("destiny");
+                    setShowBirthNumberModal(true);
+                  }}
+                >
                   <p className="text-lg text-purple-600 mb-2">Destiny Number</p>
                   <p className="text-4xl font-bold text-purple-900">
                     {numerologyResult.destinyNumber}
                   </p>
                 </div>
-
                 <div
                   className={`flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 ${
                     isEnemyNumber(
@@ -168,7 +179,23 @@ const NumerologyCalculator = () => {
                             : "text-purple-600"
                         }`}
                       >
-                        First Name: {numerologyResult.firstNameNumber || "-"}
+                        {name.trim().split(" ")[0] || "First Name"}:{" "}
+                        {numerologyResult.firstNameNumber || "-"}
+                        {numerologyResult.firstNameNumber && (
+                          <img
+                            src={
+                              isPositiveNumber(numerologyResult.firstNameNumber)
+                                ? "/pass.svg"
+                                : "/cross.svg"
+                            }
+                            alt={
+                              isPositiveNumber(numerologyResult.firstNameNumber)
+                                ? "Positive"
+                                : "Negative"
+                            }
+                            className="inline-block ml-1 w-4 h-4"
+                          />
+                        )}
                       </p>
                       <p
                         className={`text-sm ${
@@ -179,8 +206,50 @@ const NumerologyCalculator = () => {
                             : "text-purple-600"
                         }`}
                       >
-                        Full Name: {numerologyResult.nameNumber || "-"}
+                        {name || "Enter Full Name"}:{" "}
+                        {numerologyResult.nameNumber || "-"}
+                        {numerologyResult.nameNumber && (
+                          <img
+                            src={
+                              isPositiveNumber(numerologyResult.nameNumber)
+                                ? "/pass.svg"
+                                : "/cross.svg"
+                            }
+                            alt={
+                              isPositiveNumber(numerologyResult.nameNumber)
+                                ? "Positive"
+                                : "Negative"
+                            }
+                            className="inline-block ml-1 w-4 h-4"
+                          />
+                        )}
                       </p>
+                      {numerologyResult.firstNameNumber &&
+                        numerologyResult.nameNumber && (
+                          <p
+                            className={`text-sm mt-2 font-medium ${
+                              isPositiveNumber(
+                                numerologyResult.firstNameNumber
+                              ) && isPositiveNumber(numerologyResult.nameNumber)
+                                ? "text-green-600"
+                                : isPositiveNumber(
+                                    numerologyResult.firstNameNumber
+                                  )
+                                ? "text-yellow-600"
+                                : "text-red-600"
+                            }`}
+                          >
+                            {isPositiveNumber(
+                              numerologyResult.firstNameNumber
+                            ) && isPositiveNumber(numerologyResult.nameNumber)
+                              ? "Congratulations! Your first name & full name is compatible with your birth and destiny number"
+                              : isPositiveNumber(
+                                  numerologyResult.firstNameNumber
+                                )
+                              ? "Your first name is compatible with your birth and destiny number but your full name is not"
+                              : "Your name is not compatible with your birth and destiny number"}
+                          </p>
+                        )}
                       <p
                         className={`text-sm hidden ${
                           isEnemyNumber(
@@ -207,7 +276,6 @@ const NumerologyCalculator = () => {
           )}
         </div>
       </div>
-
       <div className="w-full flex justify-center mb-4">
         <button
           onClick={() => setShowDasha(!showDasha)}
@@ -216,9 +284,7 @@ const NumerologyCalculator = () => {
           {showDasha ? "Hide Dasha(s)" : "Show Dasha(s)"}
         </button>
       </div>
-
       {showDasha && <DashaNumbers dashaNumbers={dashaNumbers} />}
-
       {/* Vedic Grid Section */}
       {selectedDate && (
         <>
@@ -236,6 +302,17 @@ const NumerologyCalculator = () => {
           <AntarDashaGrid birthDate={selectedDate} />
         </>
       )}
+      {/* Birth Number Modal */}{" "}
+      <BirthNumberModal
+        isOpen={showBirthNumberModal}
+        onClose={() => setShowBirthNumberModal(false)}
+        birthNumber={
+          selectedNumberType === "birth"
+            ? numerologyResult?.birthNumber
+            : numerologyResult?.destinyNumber
+        }
+        numberType={selectedNumberType}
+      />
     </div>
   );
 };

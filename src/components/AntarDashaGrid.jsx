@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import Modal from "./Modal";
+import GridAnalysisModal from "./GridAnalysisModal";
 import {
   calculateAntarDashaNumber,
   calculateVedicGrid,
@@ -117,9 +117,11 @@ const AntarDashaGrid = ({ birthDate }) => {
       const { negativeNumbers, regularNumbers } =
         analyzeNumbersNegativity(gridData);
 
-      // Build negativity info
+      // Build negativity info      // Build negativity info and remedies info
       const negativityInfo = {};
+      const remediesInfo = {};
       negativeNumbers.forEach((num) => {
+        // Add negativity information
         if (data.numbers[num]?.negativity) {
           const negativityList = data.numbers[num].negativity.filter(
             (info) => info !== ""
@@ -127,6 +129,10 @@ const AntarDashaGrid = ({ birthDate }) => {
           if (negativityList.length > 0) {
             negativityInfo[num] = negativityList;
           }
+        }
+        // Add remedies information
+        if (data.numbers[num]?.remedies) {
+          remediesInfo[num] = data.numbers[num].remedies;
         }
       });
 
@@ -145,6 +151,9 @@ const AntarDashaGrid = ({ birthDate }) => {
         ...(gridData.dashaNumber ? [`D:${gridData.dashaNumber}`] : []),
       ];
 
+      // Calculate birth number from birth date
+      const birthNumber = calculateSingleDigit(birthDate.getDate());
+
       // Calculate Yogs
       const allNumbers = [
         ...gridData.vedicGrid.flat().filter((num) => num !== ""),
@@ -153,14 +162,15 @@ const AntarDashaGrid = ({ birthDate }) => {
       ].filter(Boolean);
 
       const yogs = calculateYogs(allNumbers);
-
       setSelectedGridNumbers({
         regularNumbers,
         negativeNumbers,
         specialNumbers,
         negativityInfo,
+        remediesInfo,
         predictions,
-        yogs, // Add yogs to the state
+        yogs,
+        birthNumber,
       });
       setSelectedYear(gridData.year);
       setIsModalOpen(true);
@@ -196,8 +206,8 @@ const AntarDashaGrid = ({ birthDate }) => {
                     : "-"}
                 </span>
                 {isAntarDashaSum && (
-                  <span className="text-sm font-bold text-orange-500 mt-1">
-                    ({gridData.antarDashaNumber})
+                  <span className="text-sm font-bold text-green-500 mt-1">
+                    [{gridData.antarDashaNumber}]
                   </span>
                 )}
                 {isDashaNumber && (
@@ -271,160 +281,12 @@ const AntarDashaGrid = ({ birthDate }) => {
         )}
       </div>
 
-      <Modal
+      <GridAnalysisModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title={`Grid Analysis for Year ${selectedYear}`}
-      >
-        <div className="space-y-6">
-          {/* Yog Predictions Section */}
-          {selectedGridNumbers.yogs?.length > 0 && (
-            <div className="bg-purple-50 p-4 rounded-lg mb-4">
-              <h4 className="font-semibold text-purple-700 mb-2">
-                Active Yogs
-              </h4>
-              <div className="space-y-4">
-                {selectedGridNumbers.yogs.map((yog, index) => (
-                  <div
-                    key={index}
-                    className="border-b border-purple-200 pb-3 last:border-0"
-                  >
-                    <h5 className="font-medium text-purple-600 mb-2">
-                      {yog.name}
-                    </h5>
-                    <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm pl-2">
-                      {yog.description.map((point, idx) => (
-                        <li key={idx}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Finance Predictions Section */}
-          {selectedGridNumbers.predictions?.finance?.length > 0 && (
-            <div>
-              <p className="text-lg text-green-800 mb-2">
-                Financial Predictions:
-              </p>
-              <div className="space-y-2">
-                {selectedGridNumbers.predictions.finance.map(
-                  (prediction, idx) => (
-                    <div
-                      key={idx}
-                      className={`p-4 rounded-lg ${
-                        prediction.type === "positive"
-                          ? "bg-green-50 text-green-800"
-                          : "bg-red-50 text-red-800"
-                      }`}
-                    >
-                      <p className="font-medium">{prediction.message}</p>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Property Predictions Section */}
-          {selectedGridNumbers.predictions?.property?.length > 0 && (
-            <div>
-              <p className="text-lg text-green-800 mb-2">
-                Property Predictions:
-              </p>
-              <div className="space-y-2">
-                {selectedGridNumbers.predictions.property.map(
-                  (prediction, idx) => (
-                    <div
-                      key={idx}
-                      className={`p-4 rounded-lg ${
-                        prediction.type === "positive"
-                          ? "bg-green-50 text-green-800"
-                          : "bg-red-50 text-red-800"
-                      }`}
-                    >
-                      <p className="font-medium">{prediction.message}</p>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Existing Sections */}
-          <div>
-            <p className="text-lg text-purple-800 mb-2">Positive Numbers:</p>
-            <div className="flex flex-wrap gap-2">
-              {selectedGridNumbers.regularNumbers?.map((num, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 rounded-full font-medium bg-purple-100 text-purple-800"
-                >
-                  {num}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-lg text-red-800 mb-2">Negative Numbers:</p>
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-wrap gap-2">
-                {selectedGridNumbers.negativeNumbers?.map((num, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 rounded-full font-medium bg-red-100 text-red-800"
-                  >
-                    {num}
-                  </span>
-                ))}
-              </div>
-              {selectedGridNumbers.negativeNumbers?.map(
-                (num) =>
-                  selectedGridNumbers.negativityInfo[num] && (
-                    <div key={num} className="bg-red-50 p-4 rounded-lg">
-                      <p className="font-medium text-red-800 mb-2">
-                        Number {num} Negativity:
-                      </p>
-                      <ul className="list-disc list-inside space-y-1">
-                        {selectedGridNumbers.negativityInfo[num].map(
-                          (info, idx) => (
-                            <li key={idx} className="text-red-700">
-                              {info}
-                            </li>
-                          )
-                        )}
-                      </ul>
-                    </div>
-                  )
-              )}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-lg text-purple-800 mb-2">Special Numbers:</p>
-            <div className="flex flex-wrap gap-2">
-              {selectedGridNumbers.specialNumbers?.map((num, index) => {
-                const isAntarDasha = num.toString().startsWith("AD:");
-                return (
-                  <span
-                    key={index}
-                    className={`px-4 py-2 rounded-full font-medium ${
-                      isAntarDasha
-                        ? "bg-orange-100 text-orange-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
-                    {num}
-                  </span>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </Modal>
+        selectedYear={selectedYear}
+        selectedGridNumbers={selectedGridNumbers}
+      />
     </div>
   );
 };

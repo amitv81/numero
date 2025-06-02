@@ -102,7 +102,7 @@ const calculateYogs = (numbers) => {
   // Chatur Yog: Single 9 and single 5, and missing 4
   if (count9 === 1 && count5 === 1 && is4Missing) {
     yogs.push({
-      name: "Chatur Yog(9m,5,Missing(4))",
+      name: "Chatur Yog(9,5,Missing(4))",
       description: [
         "The native is extremely sharp-minded and street-smart",
         "They are very clever and will always be looking to make money",
@@ -112,9 +112,9 @@ const calculateYogs = (numbers) => {
     });
   }
   // Mha Chatur Yog: Single 9 and multiple 5, and missing 4
-  if (count9 === 1 && count5 >= 1 && is4Missing) {
+  if (count9 === 1 && count5 > 1 && is4Missing) {
     yogs.push({
-      name: "Mha Chatur Yog(9,5,Missing(4))",
+      name: "Mha Chatur Yog(9,55,Missing(4))",
       description: [
         "The native is very clever and will always be looking to make money",
         "May cheat others",
@@ -137,7 +137,7 @@ const calculateYogs = (numbers) => {
   // Confusion Yog: Double 9 and double 5, and missing 4
   if (count9 > 1 && count5 > 1 && is4Missing) {
     yogs.push({
-      name: "Confusion Yog(99,5,Missing(4))",
+      name: "Confusion Yog(99,55,Missing(4))",
       description: [
         "The speed of mercury will at times be slow and at times fast",
         "The person will be confused as both fast and slow minds will work together",
@@ -239,10 +239,10 @@ const calculateYogs = (numbers) => {
       ],
     });
   }
-  // Rolacosta Yog: Single 2, Single 8 and single 4
+  // Roller Coaster Yog: Single 2, Single 8 and single 4
   if (count2 === 1 && count8 === 1 && count4 === 1) {
     yogs.push({
-      name: "Rolacosta Yog(2,8,4)",
+      name: "Roller Coaster Yog(2,8,4)",
       description: [
         "The native will experience a lot of ups and downs in life.",
         "Rises high and falls also",
