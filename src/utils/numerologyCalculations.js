@@ -198,15 +198,6 @@ export const calculateAntarDashaNumber = (birthDate) => {
     yearLastTwoDigits + birthNumber + dayNumber + monthNumber
   );
 
-  console.log({
-    yearLastTwoDigits,
-    birthNumber,
-    monthNumber,
-    dayNumber,
-    dayName,
-    antarDashaNumber,
-  });
-
   return {
     yearLastTwoDigits,
     birthNumber,

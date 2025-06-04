@@ -3,11 +3,28 @@
     "1": {
       "planet": "Sun",
       "element": "Fire",
-      "qualities": ["Leadership", "Independence", "Originality"],
-      "colors": ["Gold", "Orange", "Yellow"],
-      "gemstone": "Ruby",
+      "qualities": [
+        "Leadership",
+        "Independence",
+        "Strong Will power",
+        "Focus and Aim",
+        "Kind and Friendly",
+        "Initiator by Choice",
+        "Decision Maker",
+        "Practical",
+        "Disciplined",
+        "Centre of Attraction"
+      ],
+      "negativeQualities": [
+        "Spendthrifts",
+        "Can't be a follower",
+        "Doesn't listen to others",
+        "Arrogant and Dominating",
+        "Egoistic"
+      ],
       "direction": "East",
-      "day": "Sunday",
+      "colors": ["Gold", "Orange", "Yellow"],
+      "day": ["Sunday"],
       "gender": "Masculine",
       "careers": [
         "Government job",
@@ -54,30 +71,54 @@
         "short-tempered"
       ],
       "remedies": {
-        "gemstones": ["Ruby", "Red Coral"],
+        "gemstones": ["Ruby in gold on the ring finger", "Red Coral"],
         "fastingDay": "Sunday",
         "activities": [
-          "Donate red items on Sunday",
-          "Practice Surya Namaskar (Sun Salutation)",
-          "Feed birds in the morning",
-          "Wear copper ring in ring finger"
+          "On Sunday, have only sweets/fruits or one meal",
+          "try to avoid salt if possible",
+          "Offer water to the sun within 1 hr of sunrise in a copper vessel",
+          "Surya Namaskar",
+          "Donate gudd and wheat on Sundays",
+          "Respect your father",
+          "Feed Red Ants",
+          "Serve a Black Cow"
         ],
         "mantras": [
           "Om Suryaya Namaha",
           "Om Hram Hreem Hraum Sah Suryaya Namaha"
         ],
-        "colors": ["Red", "Orange", "Pink"],
+
         "direction": "Face east while working or sleeping"
       }
     },
     "2": {
       "planet": "Moon",
       "element": "Water",
-      "qualities": ["Cooperation", "Diplomacy", "Sensitivity"],
-      "colors": ["White", "Silver"],
-      "gemstone": "Pearl",
+      "qualities": [
+        "Adjusting",
+        "Nourishing",
+        "Loving",
+        "Strong Intuition",
+        "Will not oppose openly",
+        "Emotional Influencer",
+        "Excellent in creative arts",
+        "Nature Lovers",
+        "Soft Spoken",
+        "Romantic",
+        "Strong Imagination"
+      ],
+      "negativeQualities": [
+        "Emotional",
+        "Unstable by nature",
+        "Mood Swings",
+        "Worst Enemies",
+        "Can't say no to anyone",
+        "Inferiority Complex",
+        "Physically Weak"
+      ],
+      "colors": ["Light green", "White", "Cream", "Dark colours are harmful"],
       "direction": "Northwest",
-      "day": "Monday",
+      "day": ["Sunday", "Monday", "Friday"],
       "gender": "Feminine",
       "careers": [
         "Diplomat",
@@ -87,7 +128,19 @@
         "Nurse",
         "Interior Designer",
         "Mediator",
-        "Social Worker"
+        "Social Worker",
+        "Dairy-related work",
+        "Journalism",
+        "Work involving water (ocean)",
+        "Animal Husbandry",
+        "Gems-related",
+        "Creative & Arts"
+      ],
+      "provableHealthIssues": [
+        "Depression",
+        "Drugs",
+        "Silly Mistakes while in pressure",
+        "Metabolic disorders when emotionally disturbed"
       ],
       "description": "Number 2 represents the Moon and symbolizes partnerships, intuition, and emotions. People with this number are often diplomatic, sensitive, and good mediators.",
       "luckyNumbers": [1, 2, 7, 9],
@@ -109,7 +162,7 @@
         "gentle",
         "attractive aura",
         "feminine",
-        "followers"
+        "Strong Imagination"
       ],
       "negativity": [
         "always need pampering",
@@ -130,10 +183,12 @@
         "terrorist (222)"
       ],
       "remedies": {
-        "gemstones": ["Pearl", "Moonstone"],
+        "gemstones": ["Pearl", "Moonstone", "in silver on the little finger"],
         "fastingDay": "Monday",
         "activities": [
           "Offer white flowers to Moon",
+          "Offer water and milk on Shivling",
+          "Maintain Good relations with Mother",
           "Feed dogs and cows",
           "Drink water from silver vessel",
           "Practice meditation during moonlight"
@@ -142,7 +197,6 @@
           "Om Chandraya Namaha",
           "Om Shraam Shreem Shraum Sah Chandraya Namaha"
         ],
-        "colors": ["White", "Silver"],
         "direction": "Face northwest during prayers"
       }
     },
@@ -150,10 +204,9 @@
       "planet": "Jupiter",
       "element": "Fire",
       "qualities": ["Expression", "Optimism", "Growth"],
-      "colors": ["Yellow", "Purple"],
-      "gemstone": "Yellow Sapphire",
+      "colors": ["Yellow", "Purple", "light pink"],
       "direction": "Northeast",
-      "day": "Thursday",
+      "day": ["Tuesday", "Thursday", "Friday"],
       "gender": "Masculine",
       "careers": [
         "Writer",
@@ -162,8 +215,18 @@
         "Journalist",
         "Teacher",
         "Life Coach",
+        "Judicial work",
+        "Banking sector",
+        "Religious work",
         "Marketing Executive",
         "Entertainment Industry Professional"
+      ],
+      "provableHealthIssues": [
+        "ENT Problems",
+        "Liver Problems",
+        "Skin Issues",
+        "Stress",
+        "Thyroid"
       ],
       "description": "Number 3 represents Jupiter and symbolizes expansion, growth, and wisdom. People with this number are often optimistic, expressive, and naturally lucky.",
       "luckyNumbers": [3, 6, 9],
@@ -207,19 +270,23 @@
         "D3 is attached to their own family (wife, kids)"
       ],
       "remedies": {
-        "gemstones": ["Yellow Sapphire", "Topaz"],
+        "gemstones": ["Yellow Sapphire In gold", "Topaz In gold"],
         "fastingDay": "Thursday",
         "activities": [
           "Feed Brahmins or teachers",
           "Donate yellow items",
           "Plant a peepal tree",
-          "Wear gold in ring finger"
+          "Wear gold in ring finger",
+          "Offer gudd and chana to cows on Thursday",
+          "Apply haldi on forehead whenever leaving your house",
+          "Worship Banana trees on Thursday and do not eat banana on Thursday",
+          "Serve your teacher, priests, guru",
+          "Help Blind and handicapped people"
         ],
         "mantras": [
           "Om Gurave Namaha",
           "Om Graam Greem Graum Sah Gurave Namaha"
         ],
-        "colors": ["Yellow", "Gold"],
         "direction": "Face north or northeast during worship"
       }
     },
@@ -249,8 +316,12 @@
         "Short Tempered",
         "OCD"
       ],
-      "colors": ["Green", "Blue"],
-      "gemstone": "Blue Sapphire",
+      "colors": [
+        "Metallic blue",
+        "khakhee",
+        "Brown",
+        "Two three-shaded clothes"
+      ],
       "direction": "South",
       "day": "Saturday",
       "gender": "Masculine",
@@ -271,6 +342,14 @@
         "Education",
         "IT",
         "Research based work"
+      ],
+      "provableHealthIssues": [
+        "Blood Pressure",
+        "Diabetes",
+        "Accidents",
+        "Diagnostic Problems",
+        "Nazar Dosh",
+        "Asthma"
       ],
       "description": "Number 4 represents Rahu and symbolizes stability, practicality, and material achievements. People with this number are often methodical, reliable, and hardworking.",
       "luckyNumbers": [1, 2, 4, 7, 8],
@@ -307,16 +386,21 @@
         "Should not purchase a Vehicle or electronic item in his name"
       ],
       "remedies": {
-        "gemstones": ["Blue Sapphire", "Amethyst"],
+        "gemstones": ["Gomed in silver in middle finger"],
         "fastingDay": "Saturday",
         "activities": [
           "Feed crows on Saturday",
           "Donate blue or black items",
           "Practice pranayama",
-          "Worship Lord Hanuman"
+          "Worship Lord Hanuman",
+          "Worship Lord Ganesha",
+          "Offer food to a dog",
+          "Always sit on a revolving chair",
+          "Donate to sweepers",
+          "Feed fish",
+          "If not able to feed fishes then take 11 or 21 orange-colored fishes and flow it on total 11 or 21 Saturdays in running water"
         ],
         "mantras": ["Om Rahave Namaha", "Om Ram Reem Raum Sah Rahave Namaha"],
-        "colors": ["Blue", "Indigo"],
         "direction": "Face south during meditation"
       }
     },
@@ -350,7 +434,6 @@
         "Short Tempered"
       ],
       "colors": ["Green", "Gray"],
-      "gemstone": "Emerald",
       "direction": "North",
       "day": "Wednesday",
       "gender": "Neutral",
@@ -372,6 +455,13 @@
         "Mind related work",
         "Mathematician",
         "CA"
+      ],
+      "provableHealthIssues": [
+        "Anxiety",
+        "Skin Issues",
+        "Sleep Disorder",
+        "Nerves Related Issues",
+        "Kidney Problems"
       ],
       "description": "Number 5 represents Mercury and symbolizes change, communication, and versatility. People with this number are often adaptable, quick-witted, and freedom-loving.",
       "luckyNumbers": [3, 5, 6, 9],
@@ -405,7 +495,10 @@
         "ISKI TOPI USKE SAR"
       ],
       "remedies": {
-        "gemstones": ["Emerald", "Green Tourmaline"],
+        "gemstones": [
+          "Green Emerald in gold on little finger",
+          "Green Tourmaline"
+        ],
         "fastingDay": "Wednesday",
         "activities": [
           "Plant green trees",
@@ -417,7 +510,6 @@
           "Om Budhaya Namaha",
           "Om Bram Breem Braum Sah Budhaya Namaha"
         ],
-        "colors": ["Green", "Light Yellow"],
         "direction": "Face north during study or work"
       }
     },
@@ -446,7 +538,6 @@
         "Affair Prone"
       ],
       "colors": ["White", "Pink"],
-      "gemstone": "Diamond",
       "direction": "Southeast",
       "day": "Friday",
       "gender": "Feminine",
@@ -504,16 +595,43 @@
           "Om Shukraya Namaha",
           "Om Sham Sheem Shaum Sah Shukraya Namaha"
         ],
-        "colors": ["White", "Silver"],
         "direction": "Face southeast during creative work"
       }
     },
     "7": {
       "planet": "Ketu",
       "element": "Water",
-      "qualities": ["Spirituality", "Analysis", "Introspection"],
-      "colors": ["Gray", "Purple"],
-      "gemstone": "Cat's Eye",
+      "qualities": [
+        "Stability in every sphere of life",
+        "Always on travel",
+        "Logical",
+        "Deep thinkers",
+        "Things come easy to these people",
+        "Lucky people who come out of every situation",
+        "Stable life",
+        "Don’t face ups and downs in their lives with god’s grace",
+        "Spiritual",
+        "Good for partnerships",
+        "Healers",
+        "Good intuition",
+        "Straight Forward",
+        "Divine Guided",
+        "Energy Based People",
+        "Activated Subconscious Mind",
+        "Peaceful",
+        "Lucky",
+        "Good Listener",
+        "Good Observer",
+        "High Morals",
+        "Magnetic Personality"
+      ],
+      "negativeQualities": [
+        "Unstable",
+        "Easy Betrayal",
+        "Asks so many questions",
+        "Problems in married life"
+      ],
+      "colors": ["White", "light green", "shaded clothes"],
       "direction": "Southwest",
       "day": "Monday",
       "gender": "Feminine",
@@ -525,8 +643,18 @@
         "Psychic Reader",
         "Data Analyst",
         "University Professor",
-        "Technical Writer"
+        "Technical Writer",
+        "Drawing",
+        "Pharmacists",
+        "Detectives",
+        "Politics",
+        "Bollywood",
+        "Astrology",
+        "Religious professions",
+        "Editing",
+        "IT"
       ],
+      "provableHealthIssues": ["Anxiety", "Sleep disorders", "Nervousness"],
       "description": "Number 7 represents Ketu and symbolizes spirituality, wisdom, and mysticism. People with this number are often analytical, introspective, and spiritually inclined.",
       "luckyNumbers": [2, 3, 6],
       "neutralNumbers": [1, 4, 5, 7, 8],
@@ -563,7 +691,10 @@
         "Tries to over-reason with everything (baal ki khaal nikalte hain)"
       ],
       "remedies": {
-        "gemstones": ["Cat's Eye", "Brown Tourmaline"],
+        "gemstones": [
+          "Catseye (Lehsuniya) in panch dhatu on ring finger",
+          "moonstone"
+        ],
         "fastingDay": "Monday",
         "activities": [
           "Offer milk to a dog after Sunset.",
@@ -573,9 +704,9 @@
         ],
         "mantras": [
           "Om Ketave Namaha",
-          "Om Kram Kreem Kraum Sah Ketave Namaha"
+          "Om Kram Kreem Kraum Sah Ketave Namaha",
+          "Lord narsingh - “Om Sraam Sreem Sraum Sah Ketave Namah"
         ],
-        "colors": ["Brown", "Purple"],
         "direction": "Face southwest during spiritual practices"
       }
     },
@@ -583,20 +714,27 @@
       "planet": "Saturn",
       "element": "Earth",
       "qualities": ["Power", "Authority", "Material Success"],
-      "colors": ["Black", "Dark Blue"],
-      "gemstone": "Blue Sapphire",
+      "colors": ["Black", "Dark Blue", "Purple"],
       "direction": "West",
       "day": "Saturday",
       "gender": "Masculine",
       "careers": [
-        "Investment Banker",
-        "Corporate Executive",
-        "Financial Advisor",
-        "Real Estate Developer",
-        "Business Consultant",
-        "Stock Broker",
-        "Judge",
-        "Corporate Lawyer"
+        "Engineer",
+        "Sportsperson",
+        "Coal-related",
+        "Municipal Cooperation",
+        "Judiciary",
+        "Contractor",
+        "Iron-related work",
+        "Govt job in jail",
+        "Business"
+      ],
+      "provableHealthIssues": [
+        "Indigestion",
+        "Issues in intestines",
+        "ENT problems",
+        "Dental Problems",
+        "Memory Problems in old age"
       ],
       "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded.",
       "luckyNumbers": [3, 4, 6, 8],
@@ -604,66 +742,118 @@
       "enemyNumbers": [1, 9],
       "positivity": [
         "Never leaves work incomplete",
-        "can't see tears in others eyes",
-        "very helping in nature",
+        "Can't see tears in others eyes",
+        "Very helping in nature",
         "financial planning is very strong",
         "No depression",
-        "deep thinkers",
-        "extremely helpful",
-        "money in extreme",
-        "govt. job",
-        "the negativity of 8 is decreased",
-        "they reach the peak in finances",
-        "they have a strong intuition",
+        "Deep thinkers",
+        "Extremely helpful",
+        "Infinite Potential",
+        "Justice",
+        "Materialistic",
+        "Workaholic",
+        "Loyal",
+        "Best of friends",
+        "Great Financial Planner",
+        "Research",
+        "Generous",
+        "Helpful",
+        "Sensible since childhood",
         "They become 0 once in their life and after that rise above limits"
       ],
       "negativity": [
         "Life is full of struggle",
-        "disappointments",
-        "delays",
-        "deep thinkers",
+        "Disappointments",
+        "Delays",
+        "Struggle",
+        "Deep thinkers",
         "bipolar attitude",
         "can go into depression",
         "can’t forgive easily",
-        "egoistic",
+        "Hidden Ego",
+        "Diseases",
         "can't sit idle",
-        "doesn’t share their heart completely"
+        "doesn’t share their heart completely",
+        "Do not get deserved respect",
+        "Stressful",
+        "Worried about future",
+        "Miser",
+        "Worst Enemy"
       ],
       "remedies": {
-        "gemstones": ["Blue Sapphire", "Black Pearl"],
+        "gemstones": [
+          "Blue Sapphire - Neelam in middle finger",
+          "Black Pearl in middle finger"
+        ],
         "fastingDay": "Saturday",
         "activities": [
           "Feed poor people",
           "Donate oil or black items",
           "Wear iron ring in middle finger",
-          "Practice discipline and routine"
+          "Practice discipline and routine",
+          "Recite Shani chalisa daily",
+          "Worship peepal on Saturday, can also worship Lord Hanuman",
+          "Serve poor people, people having skin problems or handicap people",
+          "Avoid buying Iron furniture on Saturday",
+          "Donate Black leather Chappals and black blankets on Saturday"
         ],
         "mantras": [
           "Om Shaneshwaraya Namaha",
           "Om Sham Sheem Shaum Sah Shaneshwaraya Namaha"
         ],
-        "colors": ["Dark Blue", "Black"],
         "direction": "Face west during business activities"
       }
     },
     "9": {
       "planet": "Mars",
       "element": "Fire",
-      "qualities": ["Courage", "Leadership", "Completion"],
-      "colors": ["Red", "Scarlet"],
-      "gemstone": "Coral",
+      "qualities": [
+        "Courageous",
+        "Daring",
+        "Pure Soft hearted",
+        "Physically Strong",
+        "Greatest Mentor and disciple",
+        "Advisors",
+        "Energetic",
+        "Implementers",
+        "Humanity",
+        "Risk Taker",
+        "Manager of Skills",
+        "Straight Forward"
+      ],
+      "negativeQualities": [
+        "Dominating",
+        "Stubborn",
+        "Very Augmentative",
+        "Aggressive",
+        "Disturbed Relations",
+        "Impulsive",
+        "Egoistic",
+        "Accident Prone",
+        "Abusive",
+        "Depressed if the expectations are not met",
+        "Never accepts mistakes"
+      ],
+      "colors": ["Red", "Dark pink"],
       "direction": "South",
       "day": "Tuesday",
       "gender": "Masculine",
       "careers": [
-        "Humanitarian",
-        "NGO Worker",
-        "Medical Professional",
-        "International Relations",
-        "Military Officer",
-        "Police Officer",
-        "Charitable Organization Leader",
-        "Emergency Services Professional"
+        "Military",
+        "Police",
+        "Engineer",
+        "Medicine Manufacturing",
+        "Manager",
+        "Property Dealing",
+        "Fire Related Work",
+        "Security Services",
+        "Circus"
+      ],
+      "provableHealthIssues": [
+        "Throat Problems",
+        "High fever",
+        "Pimples",
+        "Violent Accidents"
       ],
       "description": "Number 9 represents Mars and symbolizes completion, courage, and transformation. People with this number are often energetic, brave, and natural leaders.",
       "luckyNumbers": [3, 6, 9],
@@ -699,16 +889,20 @@
         "gemstones": ["Red Coral", "Carnelian"],
         "fastingDay": "Tuesday",
         "activities": [
-          "Practice martial arts or exercise",
-          "Donate red lentils or copper items",
-          "Wear coral in ring finger",
-          "Help those in need"
+          "Worship Lord Hanuman",
+          "Keep fast on Tuesday",
+          "Offer Bondi Prasad",
+          "Read Hanuman Chalisa Daily",
+          "Serve Monkeys",
+          "Serve a cow that doesn’t have horns",
+          "Meditate",
+          "Feed Birds",
+          "Offer sindur and chola to Hanuman Ji"
         ],
         "mantras": [
           "Om Kujaya Namaha",
           "Om Kram Kreem Kraum Sah Bhaumaya Namaha"
         ],
-        "colors": ["Red", "Crimson"],
         "direction": "Face south during physical activities"
       }
     }

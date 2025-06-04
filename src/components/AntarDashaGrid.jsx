@@ -31,13 +31,17 @@ const AntarDashaGrid = ({ birthDate }) => {
   const vedicOrder = useMemo(() => [3, 1, 9, 6, 7, 5, 2, 8, 4], []);
 
   // Calculate the base Vedic grid once from birth date
-  const baseVedicGrid = useMemo(() => {
+  const baseVedicData = useMemo(() => {
     if (!birthDate) return null;
-    return calculateVedicGrid(birthDate, vedicOrder, "").newGrid;
+    const result = calculateVedicGrid(birthDate, vedicOrder, "");
+    return {
+      newGrid: result.newGrid,
+      destinyNumber: result.destinyNumber,
+    };
   }, [birthDate, vedicOrder]);
 
   const generateYearGrids = useCallback(() => {
-    if (!birthDate || !yearFrom || !yearTo || !baseVedicGrid) return;
+    if (!birthDate || !yearFrom || !yearTo || !baseVedicData) return;
 
     const grids = [];
     // Get all dasha numbers for the birth date
@@ -63,13 +67,14 @@ const AntarDashaGrid = ({ birthDate }) => {
         grids.push({
           year,
           ...antarDashaResult,
-          vedicGrid: baseVedicGrid,
+          vedicGrid: baseVedicData.newGrid,
           dashaNumber: dashaForYear,
+          destinyNumber: baseVedicData.destinyNumber,
         });
       }
     }
     setYearGrids(grids);
-  }, [yearFrom, yearTo, birthDate, baseVedicGrid]);
+  }, [yearFrom, yearTo, birthDate, baseVedicData]);
   useEffect(() => {
     if (birthDate) {
       // Generate year options for "Year From" dropdown
@@ -109,7 +114,6 @@ const AntarDashaGrid = ({ birthDate }) => {
     const selectedYear = parseInt(e.target.value);
     setYearTo(selectedYear);
   };
-
   const handleGridClick = (gridData) => {
     // Import numerology data
     import("../data/numerologyData.json").then((data) => {

@@ -40,6 +40,7 @@ const applyNegativityRules = (gridNumbers, numberFrequency, gridData) => {
 
     // Rule 1: Special case for number 1
     if (num === 1) {
+      console.log("NUMER 1", gridData, totalFrequency);
       if (totalFrequency > 1 && gridData.destinyNumber !== 1) {
         negativeNumbersSet.add(num);
       } else {
