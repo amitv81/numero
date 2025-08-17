@@ -70,11 +70,11 @@ const NumerologyCalculator = () => {
   };
 
   return (
-    <div className="w-full px-8 py-8">
+    <div className="w-full py-4">
       {/* Input Section */}
       <div className="w-full mb-8">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center text-purple-800">
+        <div className="bg-gray-900 rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-semibold mb-6 text-center text-white">
             Enter Your Details
           </h2>
           <div className="flex flex-col items-center">
@@ -86,7 +86,7 @@ const NumerologyCalculator = () => {
                   value={name}
                   onChange={handleNameChange}
                   placeholder="Enter your name"
-                  className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
+                  className="w-full p-4 text-lg text-center border text-white bg-gray-700 border-gray-600 rounded focus:outline-none focus:border-gray-500"
                 />
               </div>{" "}
               {/* Date Input */}
@@ -104,7 +104,7 @@ const NumerologyCalculator = () => {
                       date.setHours(12); // Set to noon to avoid timezone issues
                       handleDateChange(date);
                     }}
-                    className="w-full p-4 text-lg text-center border border-purple-300 rounded focus:outline-none focus:border-purple-500"
+                    className="w-full p-4 text-lg text-center border bg-gray-700 border-gray-600 rounded focus:outline-none focus:border-gray-500 text-white"
                   />
                 </div>
               </div>
@@ -116,32 +116,32 @@ const NumerologyCalculator = () => {
               <div className="flex flex-col lg:flex-row justify-center gap-4 lg:gap-8">
                 {/* Birth Number Box */}
                 <div
-                  className="flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-200 cursor-pointer hover:bg-purple-100 transition-colors"
+                  className="flex-1 max-w-sm bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-gray-500 cursor-pointer hover:bg-gray-700 transition-colors"
                   onClick={() => {
                     setSelectedNumberType("birth");
                     setShowBirthNumberModal(true);
                   }}
                 >
-                  <p className="text-lg text-purple-600 mb-2">Birth Number</p>
-                  <p className="text-4xl font-bold text-purple-900">
+                  <p className="text-lg text-white mb-2">Birth Number</p>
+                  <p className="text-4xl font-bold text-white">
                     {numerologyResult.birthNumber}
                   </p>
                 </div>
                 {/* Destiny Number Box */}{" "}
                 <div
-                  className="flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-purple-200 cursor-pointer hover:bg-purple-100 transition-colors"
+                  className="flex-1 max-w-sm bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-gray-500 cursor-pointer hover:bg-gray-700 transition-colors"
                   onClick={() => {
                     setSelectedNumberType("destiny");
                     setShowBirthNumberModal(true);
                   }}
                 >
-                  <p className="text-lg text-purple-600 mb-2">Destiny Number</p>
-                  <p className="text-4xl font-bold text-purple-900">
+                  <p className="text-lg text-white mb-2">Destiny Number</p>
+                  <p className="text-4xl font-bold text-white">
                     {numerologyResult.destinyNumber}
                   </p>
                 </div>
                 <div
-                  className={`flex-1 max-w-sm bg-purple-50 p-6 rounded-lg flex flex-col items-center justify-center border-2 ${
+                  className={`flex-1 max-w-sm bg-gray-800 p-6 rounded-lg flex flex-col items-center justify-center border-2 border-gray-500 ${
                     isEnemyNumber(
                       singleDigitNameNumber,
                       numerologyResult.birthNumber,
@@ -152,11 +152,11 @@ const NumerologyCalculator = () => {
                         numerologyResult.nameNumber &&
                         isPositiveNumber(numerologyResult.firstNameNumber) &&
                         isPositiveNumber(numerologyResult.nameNumber)
-                      ? "border-green-500 bg-green-100"
-                      : "border-purple-200"
+                      ? "border-green-500 bg-green-100 text-green-600"
+                      : "border-gray-500 text-white"
                   }`}
                 >
-                  <p className="text-lg text-purple-600 mb-2">Name Number</p>
+                  <p className="text-lg  mb-2">Name Number</p>
                   <div className="text-center">
                     <p
                       className={`text-4xl font-bold ${
@@ -164,7 +164,7 @@ const NumerologyCalculator = () => {
                           ? isPositiveNumber(numerologyResult.nameNumber)
                             ? "text-green-600"
                             : "text-red-600"
-                          : "text-purple-900"
+                          : "text-white"
                       }`}
                     >
                       {numerologyResult.nameNumber || "-"}
@@ -176,7 +176,7 @@ const NumerologyCalculator = () => {
                             ? isPositiveNumber(numerologyResult.firstNameNumber)
                               ? "text-green-600"
                               : "text-red-600"
-                            : "text-purple-600"
+                            : "text-white"
                         }`}
                       >
                         {name.trim().split(" ")[0] || "First Name"}:{" "}
@@ -203,7 +203,7 @@ const NumerologyCalculator = () => {
                             ? isPositiveNumber(numerologyResult.nameNumber)
                               ? "text-green-600"
                               : "text-red-600"
-                            : "text-purple-600"
+                            : "text-white"
                         }`}
                       >
                         {name || "Enter Full Name"}:{" "}
@@ -279,7 +279,7 @@ const NumerologyCalculator = () => {
       <div className="w-full flex justify-center mb-4">
         <button
           onClick={() => setShowDasha(!showDasha)}
-          className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+          className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
         >
           {showDasha ? "Hide Dasha(s)" : "Show Dasha(s)"}
         </button>

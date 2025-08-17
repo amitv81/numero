@@ -12,6 +12,7 @@ const BirthNumberModal = ({ isOpen, onClose, birthNumber }) => {
     colors: [],
     direction: "",
     mantras: [],
+    provableHealthIssues: [],
   });
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const BirthNumberModal = ({ isOpen, onClose, birthNumber }) => {
             colors: numberData.colors || [],
             direction: numberData.direction || "",
             mantras: numberData.remedies?.mantras || [],
+            provableHealthIssues: numberData.provableHealthIssues || [],
           });
         }
       });
@@ -78,6 +80,27 @@ const BirthNumberModal = ({ isOpen, onClose, birthNumber }) => {
               </div>
             </div>
           )}
+
+        {/* Health Issues */}
+        {birthNumberData.provableHealthIssues &&
+          birthNumberData.provableHealthIssues.length > 0 && (
+            <div className="bg-orange-50 p-4 rounded-lg">
+              <h4 className="font-semibold text-orange-800 mb-3">
+                Health Issues to Watch For
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {birthNumberData.provableHealthIssues.map((issue, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-700"
+                  >
+                    {issue}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
         {/* Suitable Professions */}
         {birthNumberData.careers.length > 0 && (
           <div className="bg-green-50 p-4 rounded-lg">

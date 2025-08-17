@@ -227,6 +227,25 @@ const calculateYogs = (numbers) => {
       ],
     });
   }
+  // Education Yog: Single 3, Single 6 and Single 2
+  if (count3 === 1 && count6 === 1 && count2 === 1) {
+    yogs.push({
+      name: "Education Yog(3,6,2)",
+      description: [
+        "breaks/herdals in education",
+        "good for education and teaching",
+        "very intelegent",
+        "good counsler",
+        "good negociatory and mnuplator",
+        "good communication",
+        "marketing people",
+        "hardworking and successful in life",
+        "skin diseases, ear related diseases",
+        "don't like to marriage, if married then devoted to spiritual so bad married life",
+        "disturbed period/ sperm count related issues ",
+      ],
+    });
+  }
   // Luck Yog: Single 1 and single 7, and missing 8
   if (count1 === 1 && count7 === 1 && is8Missing) {
     yogs.push({
@@ -239,6 +258,28 @@ const calculateYogs = (numbers) => {
       ],
     });
   }
+  // Valk Siddhi: Single 1 and single 7, and single 8
+  if (count1 === 1 && count7 === 1 && count8 === 1) {
+    yogs.push({
+      name: "Valk Siddhi Yog(1,7,8)",
+      description: [
+        "Valk Siddh - will happen what they said",
+        "good in aucled since",
+        "very good 6th sense and intuition power",
+        "multiple source of income",
+        "Get respect from society",
+        "they help other but others will not help them (nki kar daria main dal)",
+        "if get hearted by any one then other person will auto get hearted by many times by some one",
+        "very hard worker",
+        "they will never ask for help from others",
+        "they will never stop till they become perfect in there learnings/work/output",
+        "bed discomfort - sleep, sex related",
+        "abroad/inter travel/transfer",
+        "good in research",
+        "idealistic nature/with good followers",
+      ],
+    });
+  }
   // Roller Coaster Yog: Single 2, Single 8 and single 4
   if (count2 === 1 && count8 === 1 && count4 === 1) {
     yogs.push({
@@ -248,6 +289,7 @@ const calculateYogs = (numbers) => {
         "Rises high and falls also",
         "These people can speak anything anywhere –whatever, whenever, wherever",
         "Married life is troubled",
+        "Chronic disease",
       ],
     });
   }
@@ -263,15 +305,17 @@ const calculateYogs = (numbers) => {
       ],
     });
   }
-  // Success Yog: Single 1, Single 3 and Single 9
+  // Success Yog: Single 3, Single 1 and Single 9
   if (count3 === 1 && count1 === 1 && count9 === 1) {
     yogs.push({
       name: "Success Yog(3,1,9)",
       description: [
         "The native rises high in life or dominates everywhere",
-        "these are male numbers and if present in the female chart, she will display manly qualities – tomboy, in behaviour and appearance as well",
+        "These are male numbers and if present in the female chart, she will display manly qualities – tomboy, in behaviour and appearance as well",
         "Good professional",
-        "spark in life",
+        "Leadership/admin quality",
+        "Bold decision",
+        "Spark in life",
         "Passionate",
         "Imaginative",
         "will do whatever they think",
@@ -285,9 +329,14 @@ const calculateYogs = (numbers) => {
       name: "Luxury Yog(6,7,5)",
       description: [
         "Enjoy all luxuries in life throughout, whether self-funded or otherwise",
+        "Beautiful/handsome/attractive",
         "Business-minded",
-        "Interest in music and arts,",
-        "true lovers",
+        "Love Marriage",
+        "Materialistic/matlabi",
+        "Interest in music and arts",
+        "Good money management",
+        "True lovers",
+        "may have extra marital affair",
         "counsellors and consultants",
         "Prone to disputes and will have a harsh tone(66)",
         "in-stable life(77)",
@@ -305,6 +354,47 @@ const calculateYogs = (numbers) => {
         "It is also said that the person will not be satisfied in their physical relationships",
         "Social service",
         "This is the spirituality plane",
+      ],
+    });
+  }
+
+  // Success Yog: Single 3, Single 7 and Single 4
+  if (count3 >= 1 && count7 >= 1 && count4 >= 1) {
+    yogs.push({
+      name: "Success Yog(3,7,4)",
+      description: [
+        "Always got top position and success",
+        "easily manage money related problem in there life",
+        "they are good business related consultant",
+        "arrogant",
+        "addiction of any thing",
+      ],
+    });
+  }
+
+  // Kamar Tord Yog: Single 9, Single 5 and Single 4
+  if (count9 == 1 && count5 == 1 && count4 == 1) {
+    yogs.push({
+      name: "Kamar Tord Yog(9,5,4)",
+      description: [
+        "Full fill there dreams by hook or by crook",
+        "Hospital ke chakkr (choli daman ka stah)",
+        "Dispute with family members",
+        "Black and white coat ka chakr rhega",
+        "Property related issues (may be with family members)",
+        "Chances of litigation are too much and may jail",
+      ],
+    });
+  }
+  // Sadhu Yog: Single 9, Single 7 and Single 2
+  if (count9 === 1 && count7 === 1 && count2 === 1) {
+    yogs.push({
+      name: "Sadhu Yog(9,7,2)",
+      description: [
+        "Very good reserchers",
+        "urine/joint pain related health issues",
+        "live life away from there family/Family life disturb",
+        "good patience",
       ],
     });
   }

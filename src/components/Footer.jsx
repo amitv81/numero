@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-amber-300 text-black p-4 mt-auto">
+    <footer className="bg-gray-900 text-white p-4 mt-auto">
       <div className="container mx-auto text-center">
         <p>&copy; {new Date().getFullYear()} Vedic Numerology Calculator</p>
       </div>

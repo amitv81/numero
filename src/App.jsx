@@ -66,14 +66,14 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <div className="text-center mt-4">
         <p className="text-lg font-semibold text-gray-700">
           Welcome, {userName}!
         </p>
       </div>
-      <main className="flex-grow w-full max-w-[1600px] mx-auto">
+      <main className="flex-grow w-full max-w-[1280px] px-2 mx-auto">
         <NumerologyCalculator />
       </main>
       <Footer />

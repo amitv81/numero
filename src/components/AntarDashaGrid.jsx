@@ -185,10 +185,10 @@ const AntarDashaGrid = ({ birthDate }) => {
     return (
       <div
         key={gridData.year}
-        className="bg-white rounded-lg shadow p-4 flex-1 min-w-[300px] cursor-pointer hover:bg-purple-50 transition-colors"
+        className="bg-gray-800 border border-gray-500 rounded-lg shadow p-4 flex-1 min-w-[300px] cursor-pointer hover:bg-gray-900 transition-colors hover:shadow-lg hover:border-gray-400"
         onClick={() => handleGridClick(gridData)}
       >
-        <h3 className="text-xl font-semibold text-purple-800 mb-4">
+        <h3 className="text-xl font-semibold text-white mb-4">
           Year {gridData.year}
         </h3>
         <div className="grid grid-cols-3 gap-2">
@@ -199,12 +199,12 @@ const AntarDashaGrid = ({ birthDate }) => {
             return (
               <div
                 key={index}
-                className="aspect-square border-2 border-purple-200 rounded-lg p-2 flex flex-col items-center justify-center relative"
+                className="aspect-square bg-gray-700 border-2 border-gray-500 rounded-lg p-2 flex flex-col items-center justify-center relative"
               >
-                <span className="absolute top-1 left-1 text-sm font-medium text-purple-600">
+                <span className="absolute top-1 left-1 text-sm font-medium text-gray-500">
                   {number}
                 </span>
-                <span className="text-lg font-bold text-purple-800">
+                <span className="text-lg font-bold text-white">
                   {gridNumbers && gridNumbers.length > 0
                     ? gridNumbers.join(", ")
                     : "-"}
@@ -231,20 +231,22 @@ const AntarDashaGrid = ({ birthDate }) => {
 
   return (
     <div className="w-full">
-      <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
-        <h2 className="text-2xl font-semibold mb-6 text-center text-purple-800">
-          Antar Dasha Analysis
+      <div className="float-start -mt-7"></div>
+      <div className="bg-gray-900 rounded-lg shadow-lg p-8 mt-8">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-white">
+          <span className="text-red-500 font-bold">Mha Dasha</span> /
+          <span className="text-green-500 font-bold">Antar Dasha</span> Analysis
         </h2>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
           <div className="flex-1 max-w-xs">
-            <label className="block text-sm font-medium text-purple-700 mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Year From
             </label>
             <select
               value={yearFrom}
               onChange={handleYearFromChange}
-              className="w-full p-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-2 border bg-gray-700 border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700"
             >
               {yearFromOptions.map((year) => (
                 <option key={year} value={year}>
@@ -255,13 +257,13 @@ const AntarDashaGrid = ({ birthDate }) => {
           </div>
 
           <div className="flex-1 max-w-xs">
-            <label className="block text-sm font-medium text-purple-700 mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Year To
             </label>
             <select
               value={yearTo}
               onChange={handleYearToChange}
-              className="w-full p-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-2 border bg-gray-700 border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700"
               min={yearFrom}
             >
               {yearToOptions
@@ -284,7 +286,6 @@ const AntarDashaGrid = ({ birthDate }) => {
           </div>
         )}
       </div>
-
       <GridAnalysisModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
