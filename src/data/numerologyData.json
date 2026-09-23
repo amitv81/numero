@@ -70,6 +70,19 @@
         "No leadership",
         "short-tempered"
       ],
+      "missing": [
+        "You may doubt your own decisions, abilities, and worth, often relying heavily on validation from others",
+        "Putting your thoughts and feelings into clear words does not come naturally",
+        "Taking charge, starting new projects, or stepping into a dominant role feels difficult and requires extra effort",
+        "Block natural career progression and make you hesitant to take necessary professional risks",
+        "Communication blocks can spill over into personal relationships, making it hard to openly express your needs"
+      ],
+      "personalyearPosetive": [
+        "New beginnings, career promotions, starting a new business, and a boost in self-confidence. You feel independent, dynamic, and full of leadership energy."
+      ],
+      "personalyearNegative": [
+        "Arrogance, aggressive clashes with bosses or authority figures, and a self-centered attitude. In relationships, this can cause you to neglect your partner's feelings, leading to friction."
+      ],
       "remedies": {
         "gemstones": ["Ruby in gold on the ring finger", "Red Coral"],
         "fastingDay": "Sunday",
@@ -182,6 +195,19 @@
         "depressive nature or completely emotionless (222)",
         "terrorist (222)"
       ],
+      "missing": [
+        "You may struggle to control your feelings, leading to frequent mood swings, sudden nervousness, high stress, and overthinking",
+        "Weak Intuition and you purel rely on hard logic",
+        "Face frequent misunderstandings, arguments, or a general lack of deep emotional connection with friends, family, or partners",
+        "Low immunity, common colds, coughs, allergies, and generalized anxiety"
+      ],
+      "personalyearPosetive": [
+        "Excellent for teamwork, building partnerships, engagements, and marriage. Intuition is high, and it brings peace, emotional bonding, avoide aggressive expansion and a gentle rhythm to life.",
+        "Key Events: Signing joint contracts, resolving old conflicts, or meeting a romantic partner."
+      ],
+      "personalyearNegative": [
+        "Extreme mood swings, over-sensitivity, depression, and anxiety. You can become overly dependent on others, easily hurt by minor criticisms, and vulnerable to emotional manipulation."
+      ],
       "remedies": {
         "gemstones": ["Pearl", "Moonstone", "in silver on the little finger"],
         "fastingDay": "Monday",
@@ -268,6 +294,20 @@
         "Health & Family Disturbance numbers",
         "R3 is more attached to the mother's side",
         "D3 is attached to their own family (wife, kids)"
+      ],
+      "missing": [
+        "Trouble expressing emotions",
+        "Gap between thought and speech. differense in what you said than what you actually meant in your head",
+        "You might struggle with verbal communication, finding that writing works better because you can edit it first",
+        "Lack of inspiration, hard to innovate or start new artistic projects",
+        "Confusion in choices",
+        "Fear of taking risks, or step into adventures"
+      ],
+      "personalyearPosetive": [
+        "Financial growth, creative breakthroughs, social popularity, and acquiring knowledge. Celebrations, travel, and luck tend to follow you this year."
+      ],
+      "personalyearNegative": [
+        "Wasteful spending, lack of focus, and over-committing to projects you can't finish. It can also bring religious or moral arrogance, leading to self-righteous arguments."
       ],
       "remedies": {
         "gemstones": ["Yellow Sapphire In gold", "Topaz In gold"],
@@ -373,6 +413,7 @@
         "problems arise but provides solution"
       ],
       "negativity": [
+        "Extreamly discipline, practicality, persistence and attention to detail",
         "Unpredictable",
         "Illogical",
         "Can’t work according to plan",
@@ -384,6 +425,22 @@
         "Party animal",
         "Destiny 4 settles away from native place",
         "Should not purchase a Vehicle or electronic item in his name"
+      ],
+      "missing": [
+        "You may find it hard to stick to a daily routine, stay organized, or maintain focus on routine tasks",
+        "Strong tendency to delay essential tasks or avoid heavy responsibilities",
+        "Career, finances, and personal relationships may experience frequent shifts or slow progress",
+        "You might overlook critical information, resulting in incomplete work or easily avoidable mistakes.",
+        "Higher vulnerability to minor accidents, and stomach-related health concerns",
+        "Possible inconsistency in budgeting, saving, or maintaining financial systems"
+      ],
+      "personalyearPosetive": [
+        "Career & Finance: A year of intense effort, long working hours, and organizing your life. Financial success comes through meticulous budgeting and sweat equity.",
+        "Relationships: Focus shifts to stability. Unstable relationships may feel restrictive, while serious couples look to buy a home or build deep roots.",
+        "Key Events: Buying real estate, renovating a home, restructuring a business, or setting long-term health goals."
+      ],
+      "personalyearNegative": [
+        "Sudden, unpredictable delays, heavy mental stress, feeling stuck or restricted, and unexpected expenses. It can cause deep feelings of confusion and vulnerability to deception or fraud."
       ],
       "remedies": {
         "gemstones": ["Gomed in silver in middle finger"],
@@ -494,6 +551,22 @@
         "adventurous",
         "ISKI TOPI USKE SAR"
       ],
+      "missing": [
+        "Money struggles: Potential for financial instability, unexpected money loss, or delays in building wealth",
+        "Hard time setting goals: Lacks a strong internal drive, versatility, and clear direction to accomplish long-term plans",
+        "Communication Challenges: May face challenges in expressing thoughts clearly, potentially causing miscommunication.",
+        "Weak networking: Finds it harder to build and maintain wide supportive professional or personal circles",
+        "Fear of change, may get anxious when routines are disrupted",
+        "Memory and focus issues, higher risk of anxiety, skin, and nerve-related health issues."
+      ],
+      "personalyearPosetive": [
+        "Career & Finance: Sudden career shifts, job changes, or unexpected financial opportunities. Ideal year for import-export, travel, or digital businesses.",
+        "Relationships: Triggers sudden attraction, unconventional romance, or love marriage setups. It brings a strong desire for personal freedom.",
+        "Key Events: Frequent travel, relocating to a new city, sudden career pivots, or breaking free from stale routines."
+      ],
+      "personalyearNegative": [
+        "High impulsivity, restlessness, anxiety, and a tendency to make reckless decisions. The intense desire for personal freedom can make you feel suffocated in commitments, often triggering a strong urge to escape or separate from relationships."
+      ],
       "remedies": {
         "gemstones": [
           "Green Emerald in gold on little finger",
@@ -580,6 +653,13 @@
         "attracts opposite sex easily"
       ],
       "negativity": [
+        "Tension, high stress, intense personal anxiety.",
+        "Problems in relationship",
+        "Emotional turmoil, Short Temper & Hyper-Sensitivity",
+        "Take minor disagreements very personally",
+        "Suffocating hyper-protective and controlling tendencies",
+        "Constantly complain, lecture, or nagging(टोका-टोकी, मीन-मेख निकालना, घरेलू झगड़े, पारिवारिक कलह)",
+        "Easily Influenced by Outsiders, friends or strangers over their own well-wishing family members",
         "Luxuries at other people’s expense",
         "instability in friendships and relationships",
         "reduction in luxuries",
@@ -587,6 +667,20 @@
         "controversies",
         "problems in conceiving a child",
         "abortions"
+      ],
+      "missing": [
+        "You may earn an adequate income, but you will struggle to save or retain money. Funds tend to disperse easily due to a lack of natural financial discipline",
+        "Maintaining harmonious bonds with a partner, family members, or friends becomes difficult. Misunderstandings and frequent conflicts are common",
+        "Avoidance of domestic or household responsibilities",
+        "You may receive little support or help from others during crucial times, forcing you to work much harder for success",
+        "You may hide your innermost feelings, expressing deep love or nurturing energy and prefer isolation",
+        "Success can be harder to achieve in foreign travels or import-export and luxury-related businesses"
+      ],
+      "personalyearPosetive": [
+        "The peak year for domestic harmony, marriage, conceiving children, family reunions, buying luxury comforts, and home beautification. Healing of past relationship wounds occurs naturally."
+      ],
+      "personalyearNegative": [
+        "Being overwhelmed by family responsibilities, emotional codependency, and relationship drama. If a marriage is completely broken, this year forces legal issues, separations, or a harsh spotlight on home-life stress."
       ],
       "remedies": {
         "gemstones": ["Diamond", "firoza in platinum or silver in ring finger"],
@@ -598,7 +692,7 @@
           "Worship Durga Ji",
           "Keep fast on Fridays",
           "Be loyal to your partner",
-          "You can also wear crystal bracelets",
+          "Wear Green aventurine crystal bracelets",
           "Gift something to a married lady who visits your house on Friday",
           "Donate white grains or sugar"
         ],
@@ -688,18 +782,35 @@
         "intuition"
       ],
       "negativity": [
-        "always demanding reasoning",
-        "unstable",
-        "easy betrayal",
-        "problems in married life",
+        "Gain deep knowledge only after experience(77)",
+        "Overthinking, Unnecessary worry and sleeplessness(77)",
+        "Frequently deals with a sense of sadness, structural failures, and recurring disappointments(777)",
+        "Deep Detachment - Without a proper guide or guru, they can feel entirely lost in life(777)",
+        "Always demanding reasoning",
+        "Unstable",
+        "Easy betrayal",
+        "Problems in married life",
         "Very inquisitive",
         "Suspects everything",
-        "instability in life",
+        "Instability in life",
         "Anxiety",
         "meaningless travels",
         "learns with losses",
         "reasoning to the level of irritation",
         "Tries to over-reason with everything (baal ki khaal nikalte hain)"
+      ],
+      "missing": [
+        "You may find it hard to trust your gut feelings or inner voice, often leading to heavy self-doubt and second-guessing",
+        "Without emotional and intuitive balance, you might over-analyze situations and trap yourself in endless logical loops",
+        "You may struggle to find a deeper purpose or connection to higher spiritual awareness",
+        "You may face lower self-confidence, making daily routines feel chaotic, scattered, or disorganized"
+      ],
+      "personalyearPosetive": [
+        "Not a year for heavy financial gambling or aggressive business expansions. Success comes through research, education, writing, or analysis, Deep spiritual growth.",
+        "Key Events: Enrolling in a course, spiritual retreats, deep mental healing, or taking a sabbatical."
+      ],
+      "personalyearNegative": [
+        "Feeling emotionally isolated, misunderstood, or abandoned by loved ones. It creates a lack of interest in material progress, financial stagnation, and a tendency to physically or emotionally withdraw from your spouse and friends."
       ],
       "remedies": {
         "gemstones": [
@@ -747,7 +858,7 @@
         "Dental Problems",
         "Memory Problems in old age"
       ],
-      "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded.",
+      "description": "Number 8 represents Saturn and symbolizes power, authority, and material success. People with this number are often ambitious, disciplined, and business-minded. They have to struggle with health if no physical work. Get respect after death. If they feel bad they will never forgot till end for long. They will not listen suggestions of others, instead of learning by its own. Unexpressive feelings/don't understand romance",
       "luckyNumbers": [3, 4, 6, 8],
       "neutralNumbers": [2, 5, 7],
       "enemyNumbers": [1, 9],
@@ -790,6 +901,21 @@
         "Worried about future",
         "Miser",
         "Worst Enemy"
+      ],
+      "missing": [
+        "Lack of Discipline and Focus: You may struggle with self-control, routine organization, and maintaining long-term concentration on goals",
+        "Low motivation and Unfinished Tasks: A common trait is losing motivation midway through projects, leaving important work incomplete",
+        "Monetary Instability: frequent cash-flow fluctuations, poor budgeting, or missed financial planning",
+        "Vulnerability to Financial Fraud: Carelessness or being overly trusting with money can make you prone to scams, bad loans, or monetary losses",
+        "Lack of Accountability: You might consciously or unconsciously avoid taking up heavy responsibilities, which can stunt both professional growth and personal relationships",
+        "Hard Work Without Just Reward",
+        "You might not easily inherit or benefit from ancestral or family property"
+      ],
+      "personalyearPosetive": [
+        "Massive financial gains, inheritance, property accumulation, professional authority, and recognition for past hard work. Legal matters usually settle in your favor if you are right. Personal relationships take a backseat to career ambitions"
+      ],
+      "personalyearNegative": [
+        "Intense workloads leading to physical burnout, continuous delays in your plans, and strict financial blockages if past actions were dishonest. Relationships can become cold, detached, and entirely transactional."
       ],
       "remedies": {
         "gemstones": [
@@ -896,6 +1022,22 @@
         "The argument to irritation",
         "normally lacks courage & confidence"
       ],
+      "missing": [
+        "Lack of Name and Fame: You may struggle more in life and fail to get proper recognition or reputation despite working very hard",
+        "Low Energy and Drive: Governed by Mars, number 9 provides the spark, physical force, and ambition. Without it, you might feel lazy, lose your inner drive, or lack the courage to face tough challenges",
+        "Financial Struggles, may lead to unexpected financial loss",
+        "You may find it hard to understand, care for, or connect with other people's feelings, leading to strained relationships",
+        "Resistance to Change: Number 9 represents completion and transformation. Lacking it can make you fearful of endings or unable to move on from the past",
+        "You may struggle with forgiveness, carrying unresolved emotional baggage that blocks personal growth",
+        "It becomes harder to take charge, inspire others, or step up into leadership roles"
+      ],
+      "personalyearPosetive": [
+        "Clearing old debts, letting go of toxic habits/people, and preparing the ground for a brilliant fresh start next year.",
+        "Key Events: Paying off loans, completing long-pending projects, or cutting ties with draining relationships."
+      ],
+      "personalyearNegative": [
+        "Short tempers, explosive arguments, impulsive endings of good relationships out of anger, and unexpected losses. You are also more vulnerable to physical accidents, surgeries, or burning out mentally."
+      ],
       "remedies": {
         "gemstones": ["Red Coral", "Carnelian"],
         "fastingDay": "Tuesday",
@@ -918,6 +1060,7 @@
       }
     }
   },
+  "dateNumber": {},
   "gridPositions": {
     "topRow": {
       "meaning": "Thoughts and intellectual capabilities",

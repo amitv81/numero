@@ -291,6 +291,7 @@ const AntarDashaGrid = ({ birthDate }) => {
         onClose={() => setIsModalOpen(false)}
         selectedYear={selectedYear}
         selectedGridNumbers={selectedGridNumbers}
+        birthDate={birthDate}
       />
     </div>
   );

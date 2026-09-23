@@ -36,17 +36,18 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
     );
   };
 
-  const handleNumberClick = (number) => {
+  const handleNumberClick = (number, isEmpty) => {
     const numberData = numerologyData.numbers[number];
     if (numberData) {
       setModalData({
         title: `Number ${number} - ${numberData.planet}`,
         data: numberData,
+        isEmpty: isEmpty,
       });
     }
   };
 
-  const RemediesContent = ({ data }) => {
+  const RemediesContent = ({ data, isEmpty }) => {
     const yogs = calculateYogs(getAllGridNumbers());
 
     return (
@@ -61,7 +62,11 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
                   className="border-b border-purple-200 pb-2 last:border-0"
                 >
                   <h5 className="font-medium text-purple-600">{yog.name}</h5>
-                  <p className="text-gray-700 text-sm">{yog.description}</p>
+                  <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+                    {yog.description.map((point, pIdx) => (
+                      <li key={pIdx}>{point}</li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -71,6 +76,25 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
           <h4 className="font-semibold text-purple-700 mb-2">Description</h4>
           <p className="text-gray-700">{data.description}</p>
         </div>
+        {isEmpty ? (
+          <div>
+            <h4 className="font-semibold text-purple-700 mb-2">Chalanges</h4>
+            <ul className="list-disc ml-4 text-gray-700 space-y-1">
+              {data.missing?.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div>
+            <h4 className="font-semibold text-purple-700 mb-2">Positivity</h4>
+            <ul className="list-disc ml-4 text-gray-700 space-y-1">
+              {data.positivity.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <h4 className="font-semibold text-purple-700 mb-2">
@@ -146,7 +170,12 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
                             ? "border-gray-500"
                             : "border-gray-500"
                         }`}
-                        onClick={() => handleNumberClick(vedicOrder[index])}
+                        onClick={() =>
+                          handleNumberClick(
+                            vedicOrder[index],
+                            numbers.length === 0,
+                          )
+                        }
                       >
                         <span className="absolute top-3 left-3 text-base font-medium text-gray-500">
                           {vedicOrder[index]}
@@ -198,7 +227,9 @@ const VedicGrid = ({ vedicGrid, vedicOrder, currentDasha, antarDashaSum }) => {
         onClose={() => setModalData(null)}
         title={modalData?.title || ""}
       >
-        {modalData && <RemediesContent data={modalData.data} />}
+        {modalData && (
+          <RemediesContent data={modalData.data} isEmpty={modalData.isEmpty} />
+        )}
       </Modal>
     </div>
   );

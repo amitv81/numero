@@ -1,11 +1,55 @@
 import Modal from "./Modal";
+import numerologyData from "../data/numerologyData.json";
+
+const calculatePersonalYear = (date, year) => {
+  if (!date) return null;
+  const dateObj = date instanceof Date ? date : new Date(date);
+  if (isNaN(dateObj.getTime())) return null;
+
+  const day = dateObj.getDate();
+  const month = dateObj.getMonth() + 1;
+  const targetYear = year || new Date().getFullYear();
+
+  const daySum = String(day)
+    .split("")
+    .reduce((sum, d) => sum + parseInt(d, 10), 0);
+  const monthSum = String(month)
+    .split("")
+    .reduce((sum, d) => sum + parseInt(d, 10), 0);
+  const yearSum = String(targetYear)
+    .split("")
+    .reduce((sum, d) => sum + parseInt(d, 10), 0);
+
+  let total = daySum + monthSum + yearSum;
+  while (total > 9) {
+    total = String(total)
+      .split("")
+      .reduce((sum, d) => sum + parseInt(d, 10), 0);
+  }
+  return total;
+};
 
 const GridAnalysisModal = ({
   isOpen,
   onClose,
   selectedYear,
   selectedGridNumbers,
+  birthDate,
 }) => {
+  const personalYear = calculatePersonalYear(
+    birthDate || selectedGridNumbers?.birthDate,
+    selectedYear,
+  );
+
+  const personalYearData = personalYear
+    ? numerologyData.numbers[personalYear]
+    : null;
+  const personalYearPositive =
+    personalYearData?.personalyearPosetive ||
+    personalYearData?.personalyearPositive ||
+    [];
+  const personalYearNegative = personalYearData?.personalyearNegative || [];
+
   return (
     <Modal
       isOpen={isOpen}
@@ -13,6 +57,52 @@ const GridAnalysisModal = ({
       title={`Grid Analysis for Year ${selectedYear}`}
     >
       <div className="space-y-6">
+        {/* Personal Year Section */}
+        {personalYear !== null && (
+          <div className="space-y-3">
+            <p className="text-lg text-purple-800 font-semibold mb-1">
+              Current Year Prediction:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-4 py-2 rounded-full font-medium bg-purple-100 text-purple-800">
+                Personal Year {personalYear}
+              </span>
+            </div>
+
+            {/* Positive Aspects */}
+            {personalYearPositive.length > 0 && (
+              <div className="bg-green-50 p-4 rounded-lg">
+                <p className="font-medium text-green-800 mb-2">
+                  Positive Aspects:
+                </p>
+                <ul className="list-disc list-inside space-y-1">
+                  {personalYearPositive.map((item, idx) => (
+                    <li key={idx} className="text-green-700">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Negative Aspects */}
+            {personalYearNegative.length > 0 && (
+              <div className="bg-red-50 p-4 rounded-lg">
+                <p className="font-medium text-red-800 mb-2">
+                  Challenges / Negatives:
+                </p>
+                <ul className="list-disc list-inside space-y-1">
+                  {personalYearNegative.map((item, idx) => (
+                    <li key={idx} className="text-red-700">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Dasha and Antardasha Section */}
         <div>
           <p className="text-lg text-purple-800 mb-2">
@@ -81,7 +171,7 @@ const GridAnalysisModal = ({
                           <li key={idx} className="text-red-700">
                             {info}
                           </li>
-                        )
+                        ),
                       )}
                     </ul>
                     {/* Remedies Section */}
@@ -183,7 +273,7 @@ const GridAnalysisModal = ({
                         </div>
                       )}
                   </div>
-                )
+                ),
             )}
           </div>
         </div>
@@ -230,7 +320,7 @@ const GridAnalysisModal = ({
                   >
                     <p className="font-medium">{prediction.message}</p>
                   </div>
-                )
+                ),
               )}
             </div>
           </div>
@@ -253,7 +343,7 @@ const GridAnalysisModal = ({
                   >
                     <p className="font-medium">{prediction.message}</p>
                   </div>
-                )
+                ),
               )}
             </div>
           </div>
